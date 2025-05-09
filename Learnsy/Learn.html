@@ -3,31 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Héroes - Transformación Educativa</title>
+    <title>Learnsy - Transformación Educativa</title>
     <style>
-        /* Reset y estilos base */
+        /* Reset y base */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Inter', sans-serif;
         }
-        
+
         body {
             background-color: #0A0A0A;
             color: white;
             line-height: 1.6;
+            overflow-x: hidden;
         }
-        
-        /* Contenedor principal */
+
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem 0;
         }
-        
-        /* Encabezado */
+
         .header {
             display: flex;
             justify-content: space-between;
@@ -35,14 +34,13 @@
             align-items: center;
             margin-bottom: 3rem;
         }
-        
+
         .logo {
             font-size: 1.8rem;
             font-weight: 700;
             letter-spacing: 2px;
         }
-        
-        /* Títulos */
+
         .main-title {
             font-weight: 800;
             font-size: 3.5rem;
@@ -51,21 +49,20 @@
             line-height: 1.2;
             text-transform: uppercase;
         }
-        
+
         .subtitle {
             color: #CCCCCC;
             font-size: 1.2rem;
             margin-bottom: 2rem;
             max-width: 600px;
         }
-        
-        /* Botón CTA */
+
         .cta-button {
-            background-color: #D94136;
-            color: white;
+            background-color: #0FFF95;
+            color: #000;
             border-radius: 8px;
             padding: 0.8rem 2rem;
-            font-weight: 600;
+            font-weight: 700;
             border: none;
             font-size: 1rem;
             transition: all 0.3s;
@@ -74,82 +71,47 @@
             text-decoration: none;
             display: inline-block;
         }
-        
+
         .cta-button:hover {
-            background-color: #C0392B;
+            background-color: #0ad87b;
             transform: scale(1.05);
         }
-        
-        /* Layout de columnas */
+
         .columns {
             display: flex;
+            flex-wrap: wrap;
             gap: 2rem;
             margin-bottom: 3rem;
         }
-        
+
         .column {
             flex: 1;
+            min-width: 300px;
         }
-        
-        /* Tarjetas de métricas */
-        .metrics {
-            display: flex;
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-        
-        .metric-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 1.5rem;
-            flex: 1;
-        }
-        
-        .metric-value {
-            font-size: 2rem;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 0.5rem;
-        }
-        
-        .metric-label {
-            color: #CCCCCC;
-            font-size: 0.9rem;
-        }
-        
-        /* Efectos para imágenes */
+
         .image-container {
             position: relative;
             height: 500px;
             margin-top: 2rem;
         }
-        
-        .main-image {
+
+        .main-image, .overlay-image, .pillar-img, .course-img, .final-img {
             border-radius: 16px;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-            transform: perspective(1000px) rotateY(-5deg);
-            position: relative;
-            z-index: 1;
-            width: 85%;
-            height: auto;
-            max-height: 400px;
             object-fit: cover;
-        }
-        
-        .overlay-image {
-            border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            position: absolute;
-            right: 0;
-            top: 15%;
-            transform: rotate(-5deg);
-            z-index: 2;
-            width: 50%;
+            width: 100%;
             height: auto;
-            max-height: 300px;
-            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
         }
-        
+
+        .main-image:hover,
+        .overlay-image:hover,
+        .pillar-img:hover,
+        .course-img:hover,
+        .final-img:hover {
+            transform: scale(1.03);
+        }
+
         .mental-text {
             position: absolute;
             bottom: 30px;
@@ -159,98 +121,185 @@
             font-size: 2.5rem;
             z-index: 3;
         }
-        
-        /* Debug panel */
-        .debug-panel {
-            background: rgba(0,0,0,0.7);
-            padding: 1rem;
-            border-radius: 8px;
-            margin-top: 1rem;
-            font-family: monospace;
-            font-size: 0.9rem;
-            color: #ccc;
+
+        section {
+            padding: 4rem 0;
+            animation: fadeIn 1.5s ease-out;
         }
-        
-        .debug-toggle {
-            background: #333;
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
             color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            cursor: pointer;
+        }
+
+        .section-light {
+            background-color: #f7f7f7;
+            color: #111;
+        }
+
+        .section-light .section-title {
+            color: #111;
+        }
+
+        .pillar, .course-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .pillar:hover, .course-card:hover {
+            transform: scale(1.02);
+        }
+
+        .course-img, .pillar-img {
             margin-bottom: 1rem;
+        }
+
+        .big-cta {
+            background-image: url('./Images/Image11.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            padding: 4rem 2rem;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .big-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .big-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .big-cta .cta-button {
+            font-size: 1.2rem;
+            padding: 1rem 3rem;
+            background-color: #00FF88;
+            color: black;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Encabezado -->
-        <div class="header">
-            <div class="logo">HÉROES</div>
+<div class="container">
+    <!-- Encabezado -->
+    <div class="header">
+        <div class="logo">LEARNSY</div>
+        <a href="#" class="cta-button">¡QUIERO UNIRME!</a>
+    </div>
+
+    <div class="columns">
+        <div class="column">
+            <h1 class="main-title">FORJANDO LEYENDAS DESDE LA AMBICIÓN ADOLESCENTE</h1>
+            <p class="subtitle">No es una escuela. Es una forja.
+                Aquí los chavales con hambre de grandeza se convierten en máquinas de disciplina, visión y acción.
+                Cursos, retos y herramientas para romper el ciclo y construir tu mejor versión</p>
             <a href="#" class="cta-button">¡QUIERO UNIRME!</a>
         </div>
-        
-        <!-- Contenido principal -->
-        <div class="columns">
-            <!-- Columna izquierda (Texto) -->
-            <div class="column">
-                <h1 class="main-title">CONVIRTIENDO ADOLESCENTES AMBICIOSOS EN HÉROES</h1>
-                <p class="subtitle">Héroes es una universidad online donde los jóvenes aprenden todo lo que no se enseña en el sistema educativo:</p>
-                
-                <!-- Botón CTA adicional -->
-                <a href="#" class="cta-button">¡QUIERO UNIRME!</a>
-                
-                <!-- Métricas -->
-                <div class="metrics">
-                    <div class="metric-card">
-                        <div class="metric-value">20K+</div>
-                        <div class="metric-label">Estudiantes</div>
-                        <div class="metric-label">(gratis)</div>
-                    </div>
-                    
-                    <div class="metric-card">
-                        <div class="metric-value">400+</div>
-                        <div class="metric-label">Héroes</div>
-                    </div>
-                    
-                    <div class="metric-card">
-                        <div class="metric-value">4.9<span style="color: #D94136">★</span></div>
-                        <div class="metric-label">Calificación</div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Columna derecha (Imágenes) -->
-            <div class="column">
-                <!-- Panel de debug -->
-                <button class="debug-toggle" onclick="toggleDebug()">🔍 Información técnica</button>
-                <div id="debugPanel" class="debug-panel" style="display: none;">
-                    <p><strong>Ruta base:</strong> <code id="basePath"></code></p>
-                    <p><strong>Carpeta Images:</strong> <code>./Images/</code></p>
-                    <p><strong>Archivos encontrados:</strong> Image2.png, Image3.png, Learnsy.png</p>
-                </div>
-                
-                <!-- Contenedor de imágenes -->
-                <div class="image-container">
-                    <img src="./Images/Image3.png" class="main-image" alt="Imagen principal">
-                    <div class="mental-text">Mental</div>
-                    <img src="./Images/Image2.png" class="overlay-image" alt="Imagen secundaria">
-                </div>
+        <div class="column">
+            <div class="image-container">
+                <img src="./Images/Image3.png" class="main-image" alt="Imagen principal">
+                <div class="mental-text">Mental</div>
+                <img src="./Images/Image2.png" class="overlay-image" alt="Imagen secundaria">
             </div>
         </div>
     </div>
+</div>
 
-    <script>
-        // Función para mostrar/ocultar el panel de debug
-        function toggleDebug() {
-            const panel = document.getElementById('debugPanel');
-            panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
-        }
-        
-        // Mostrar la ruta base (solo para demostración)
-        document.getElementById('basePath').textContent = window.location.href;
-        
-        // Aquí puedes añadir más funcionalidad JavaScript si es necesario
-    </script>
+<!-- ¿Por qué Learnsy? -->
+<section>
+    <div class="container">
+        <h2 class="section-title">¿POR QUÉ LEARNSY?</h2>
+        <p>Porque estamos hartos de ver talento desperdiciado por falta de oportunidades.<br>
+        Porque la educación tradicional no llega a todos.<br>
+        Porque tú mereces aprender cosas útiles, sin pagar un centavo.</p>
+        <br>
+        <p>Learnsy es para los que quieren más.<br>
+        Más conocimiento. Más independencia. Más futuro.<br>
+        No es una plataforma, es una revolución educativa. Si tienes hambre de crecer, este es tu lugar.</p>
+        <img src="./Images/Image4.jpg" class="pillar-img" alt="Motivacional">
+    </div>
+</section>
+
+<!-- Nuestros pilares -->
+<section class="section-light">
+    <div class="container">
+        <h2 class="section-title">🚀 ¿Qué te espera dentro?</h2>
+        <div class="columns">
+            <div class="pillar">
+                <img src="./Images/Image5.jpg" class="pillar-img" alt="Skills">
+                <h3>🧠 Skills que valen oro</h3>
+                <p>Aprende lo que sirve: plata, diseño, redes, tecnología. Lo que nadie te enseña, pero todos deberían saber.</p>
+            </div>
+            <div class="pillar">
+                <img src="./Images/Image6.jpg" class="pillar-img" alt="Futuro">
+                <h3>💼 Futuro con propósito</h3>
+                <p>Esto no es teoría. Es lo que te abre puertas. Laburo, proyectos, independencia.</p>
+            </div>
+            <div class="pillar">
+                <img src="./Images/Image7.jpg" class="pillar-img" alt="Comunidad">
+                <h3>💬 Gente como tú, con hambre de más</h3>
+                <p>Acá nadie va solo. Comunidad real, apoyo real. Todos creciendo, todos empujando.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Cursos que encienden -->
+<section>
+    <div class="container">
+        <h2 class="section-title">📚 Aprendizaje sin vueltas</h2>
+        <p>Cero relleno. Solo lo que importa. Aprende algo hoy que puedas usar mañana.</p>
+        <div class="columns">
+            <div class="course-card">
+                <img src="./Images/Image8.jpg" class="course-img" alt="Curso 1">
+                <h3>🔥 Rompe el ciclo</h3>
+                <p>Aprende a romper con lo que te frena y transforma tu mentalidad desde ya.</p>
+            </div>
+            <div class="course-card">
+                <img src="./Images/Image9.jpg" class="course-img" alt="Curso 2">
+                <h3>💪 Looksmaxing</h3>
+                <p>Potencia tu imagen, presencia y autoestima desde lo físico y lo mental.</p>
+            </div>
+        </div>
+        <a href="#" class="cta-button">👉 Ver todos los cursos</a>
+    </div>
+</section>
+
+<!-- Historias que arden -->
+<section class="section-light">
+    <div class="container">
+        <h2 class="section-title">✨ Gente común, logros brutales</h2>
+        <p>Pronto compartiremos testimonios reales de estudiantes Learnsy. Prepárate para sentir la motivación en carne viva.</p>
+        <img src="./Images/Image10.jpg" class="pillar-img" alt="Historias">
+    </div>
+</section>
+
+<!-- Tu momento es ahora -->
+<section>
+    <div class="container">
+        <div class="big-cta">
+            <h2>🔓 Abre esa puerta. Nadie lo hará por ti.</h2>
+            <p>No esperes a tenerlo todo para empezar. Empieza para tenerlo todo.<br>
+            Learnsy está hecho para los que quieren más, para los que no se rinden. ¿Eres tú uno de ellos?</p>
+            <a href="#" class="cta-button">🟢 Empezar ya mismo</a>
+        </div>
+    </div>
+</section>
+
 </body>
 </html>
