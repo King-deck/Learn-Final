@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Learnsy - Transformación Educativa</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
   <style>
     * {
       margin: 0;
@@ -119,76 +123,6 @@
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
     }
 
-    .mental-text {
-      position: absolute;
-      bottom: 20px;
-      left: 30px;
-      font-family: 'Brush Script MT', cursive;
-      color: #00FF88;
-      font-size: 1.8rem;
-      z-index: 4;
-    }
-
-    .section-title {
-      font-size: 2rem;
-      font-weight: 800;
-      margin-bottom: 1.5rem;
-    }
-
-    .section-light {
-      background-color: #f7f7f7;
-      color: #111;
-    }
-
-    .section-light .section-title {
-      color: #111;
-    }
-
-    .pillar,
-    .course-card {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 1.5rem;
-      border-radius: 12px;
-      text-align: center;
-      transition: transform 0.3s;
-      font-size: 0.95rem;
-      flex: 1 1 280px;
-    }
-
-    .pillar:hover,
-    .course-card:hover {
-      transform: scale(1.02);
-    }
-
-    .course-img,
-    .pillar-img,
-    .final-img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 0.8rem;
-    }
-
-    .big-cta {
-      background-image: url('./Images/Image11.jpg');
-      background-size: cover;
-      background-position: center;
-      border-radius: 16px;
-      padding: 3rem 1.5rem;
-      color: white;
-      text-align: center;
-      position: relative;
-    }
-
-    .big-cta h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .big-cta p {
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
     .divider {
       border-top: 1px solid #333;
       margin: 3rem auto;
@@ -233,6 +167,29 @@
       color: white;
     }
 
+    .course-card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+      transition: all 0.3s ease-in-out;
+      font-size: 0.95rem;
+      flex: 1 1 280px;
+    }
+
+    .course-card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 12px 30px rgba(0, 255, 150, 0.25);
+      border: 1px solid #0FFF95;
+      cursor: pointer;
+    }
+
+    .course-img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 0.8rem;
+    }
+
     .course-card h2 {
       color: white;
     }
@@ -240,202 +197,151 @@
     .course-card p {
       color: #ccc;
     }
-.why-learnsy-section {
-  margin-top: 80px;
-  text-align: center;
-  padding: 40px 20px;
-  background: #f8f8f8;
-  border-radius: 16px;
-}
 
-.why-title {
-  font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 40px;
-  color: #00ff87; /* Verde del botón */
-}
+    .big-cta {
+      background-image: url('./Images/Image11.jpg');
+      background-size: cover;
+      background-position: center;
+      border-radius: 16px;
+      padding: 3rem 1.5rem;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
 
-.why-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-}
+    .big-cta h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
 
-.why-item {
-  width: 300px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 20px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: white;
-}
+    .big-cta p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
 
-.why-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 15px 25px rgba(0, 255, 135, 0.4);
-}
+    .why-learnsy-section {
+      margin-top: 80px;
+      text-align: center;
+      padding: 40px 20px;
+      background: #f8f8f8;
+      border-radius: 16px;
+    }
 
-.why-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 20px 20px 0 0;
-}
+    .why-title {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 40px;
+      color: #00ff87;
+    }
 
-.why-text {
-  padding: 20px;
-  font-size: 16px;
-  font-weight: 500;
-  color: #333;
-}
-.pilares-section {
-  padding: 80px 40px;
-  background-color: #0e0e0e;
-  text-align: center;
-}
+    .why-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
 
-.pilares-title {
-  font-size: 36px;
-  font-weight: 700;
-  color: white;
-  margin-bottom: 50px;
-}
+    .why-item {
+      width: 300px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background-color: white;
+    }
 
-.pilares-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+    .why-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 25px rgba(0, 255, 135, 0.4);
+    }
 
-.pilar-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 15px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
+    .why-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 20px 20px 0 0;
+    }
 
-.pilar-card:hover {
-  transform: scale(1.05);
-}
+    .why-text {
+      padding: 20px;
+      font-size: 16px;
+      font-weight: 500;
+      color: #333;
+    }
 
-.pilar-card img {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.3s ease;
-  border-radius: 15px;
-}
+    /* PILARES SECTION */
+    .pilares-zigzag {
+      padding: 4rem 0;
+      background-color: #0A0A0A;
+    }
 
-.pilar-info {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 15px;
-  font-size: 20px;
-  color: #00ff87;
-  font-weight: 600;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-  text-transform: uppercase;
-}
-.pilares-zigzag {
-  padding: 80px 20px;
-  background-color: #0a0a0a;
-}
+    .pilar-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 3rem;
+      margin-bottom: 5rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 2rem;
+    }
 
-.pilares-zigzag .pilares-title {
-  text-align: center;
-  font-size: 2.8rem;
-  font-weight: 800;
-  color: #00ff87;
-  margin-bottom: 60px;
-}
+    .pilar-card.reverse {
+      flex-direction: row-reverse;
+    }
 
-.pilar-item {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-bottom: 80px;
-  position: relative;
-}
+    .pilar-img {
+      flex: 1;
+      min-width: 300px;
+    }
 
-.pilar-image,
-.pilar-text {
-  width: 100%;
-  max-width: 50%;
-  padding: 20px;
-  box-sizing: border-box;
-}
+    .pilar-img img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
 
-.pilar-image img {
-  width: 100%;
-  border-radius: 20px;
-  transition: transform 0.3s ease;
-}
+    .pilar-img img:hover {
+      transform: scale(1.05);
+    }
 
-.pilar-image img:hover {
-  transform: scale(1.03);
-}
+    .pilar-text {
+      flex: 1;
+      color: white;
+    }
 
-.pilar-text {
-  color: white;
-}
+    .pilar-text h3 {
+      font-size: 2rem;
+      color: #0fff95;
+      margin-bottom: 1rem;
+    }
 
-.pilar-text h3 {
-  font-size: 2rem;
-  color: #0fff95;
-  margin-bottom: 10px;
-}
+    .pilar-text p {
+      font-size: 1.1rem;
+      color: #CCCCCC;
+      line-height: 1.6;
+    }
 
-.pilar-text p {
-  font-size: 1rem;
-  color: #ccc;
-  line-height: 1.6;
-  max-width: 500px;
-}
-
-.left {
-  order: 1;
-}
-
-.right {
-  order: 2;
-}
-
-@media (max-width: 900px) {
-  .pilar-item {
-    flex-direction: column;
-  }
-
-  .pilar-image,
-  .pilar-text {
-    max-width: 100%;
-    text-align: center;
-  }
-
-  .pilar-text p {
-    margin: 0 auto;
-  }
-}
+    @media (max-width: 768px) {
+      .pilar-card, .pilar-card.reverse {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      
+      .pilar-img, .pilar-text {
+        width: 100%;
+      }
+      
+      .pilar-text {
+        text-align: center;
+      }
+      
+      
+    }
   </style>
-  <script>
-    window.addEventListener('scroll', function () {
-      document.querySelectorAll('.reveal, .zoom-reveal').forEach(function (el) {
-        const top = el.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        if (top < windowHeight - 100) {
-          el.classList.add('active');
-        }
-      });
-    });
-  </script>
 </head>
 <body>
   <div class="container">
@@ -454,87 +360,79 @@
       </div>
       <div class="column">
         <div class="image-container">
-          <img src="./Images/Image3.png" class="main-image zoom-reveal" alt="Imagen principal">
-          <img src="./Images/Image2.png" class="overlay-image zoom-reveal" alt="Imagen secundaria">
-          <div class="mental-text">Mental</div>
+          <img src="./Images/Image3.png" class="main-image" alt="Imagen principal">
+          <img src="./Images/Image2.png" class="overlay-image" alt="Imagen secundaria">
         </div>
       </div>
     </div>
   </div>
 
-
-<!-- NUEVA SECCIÓN: ¿Por qué Learnsy? -->
-<div class="why-learnsy-section">
-  <h2 class="why-title">¿Por qué Learnsy?</h2>
-  <div class="why-gallery">
-    <div class="why-item">
-      <img src="./Images/Image16.png" alt="Potencia tu Futuro">
-      <div class="why-text">Transformamos tu hambre de éxito en resultados reales</div>
-    </div>
-    <div class="why-item">
-      <img src="./Images/Image17.png" alt="Comunidad de Hermanos">
-      <div class="why-text">No estás solo. Aquí creces con una tribu que piensa como tú</div>
-    </div>
-    <div class="why-item">
-      <img src="./Images/Image18.png" alt="Puro Movimiento">
-      <div class="why-text">Nada de bla bla. Solo herramientas, retos y acción sin pausa</div>
+  <!-- ¿Por qué Learnsy? -->
+  <div class="why-learnsy-section">
+    <h2 class="why-title">¿Por qué Learnsy?</h2>
+    <div class="why-gallery">
+      <div class="why-item">
+        <img src="./Images/Image16.png" alt="Potencia tu Futuro">
+        <div class="why-text">Transformamos tu hambre de éxito en resultados reales</div>
+      </div>
+      <div class="why-item">
+        <img src="./Images/Image17.png" alt="Comunidad de Hermanos">
+        <div class="why-text">No estás solo. Aquí creces con una tribu que piensa como tú</div>
+      </div>
+      <div class="why-item">
+        <img src="./Images/Image18.png" alt="Puro Movimiento">
+        <div class="why-text">Nada de bla bla. Solo herramientas, retos y acción sin pausa</div>
+      </div>
     </div>
   </div>
+
+  <!-- PILARES ZigZag -->
+   <div style="text-align: center; margin-top: 60px;">
+  <h2 class="why-title">Nuestros Pilares</h2>
 </div>
 
 
-
-<section class="pilares-zigzag">
-  <h2 class="pilares-title">Nuestros Pilares</h2>
-
-  <div class="pilar-item">
-    <div class="pilar-text left">
-      <h3>Disciplina</h3>
-      <p>En Learnsy, no creemos en la motivación pasajera ni en los resultados instantáneos.
-         Nuestra metodología está diseñada para construir desde las raíces: disciplina, enfoque y constancia diaria. 
-         No se trata solo de estudiar, se trata de forjar el carácter. 
-         Porque los sueños grandes requieren acciones diarias más grandes aún. 
-         Aquí cultivamos hábitos que te acompañan toda la vida. Cada día cuenta. Cada acción suma. 
-         Y cada obstáculo es una oportunidad para crecer.</p>
+  <section class="pilares-zigzag">
+    <div class="pilar-card reverse">
+      <div class="pilar-img">
+        <img src="./Images/Image5.png" alt="Disciplina Nuclear">
+      </div>
+      <div class="pilar-text">
+        <h3>Disciplina Nuclear</h3>
+        <p>Instala una disciplina brutal y no negociable. Tu palabra es ley. Sin excusas.</p>
+      </div>
     </div>
-    <div class="pilar-image right">
-      <img src="./Images/Image5.png" alt="Disciplina">
-    </div>
-  </div>
 
-  <div class="pilar-item">
-    <div class="pilar-image left">
-      <img src="./Images/Image6.png" alt="Visión">
+    <div class="pilar-card">
+      <div class="pilar-img">
+        <img src="./Images/Image6.png" alt="Mentalidad de Hierro">
+      </div>
+      <div class="pilar-text">
+        <h3>Mentalidad de Hierro</h3>
+        <p>Forja una mente inquebrantable. Reprograma tus pensamientos para resistir cualquier tormenta.</p>
+      </div>
     </div>
-    <div class="pilar-text right">
-      <h3>Visión</h3>
-      <p>Ayudamos a que los estudiantes vean más allá del examen, conectando metas con propósito.</p>
-    </div>
-  </div>
 
-  <div class="pilar-item">
-    <div class="pilar-text left">
-      <h3>Estrategia</h3>
-      <p>No se trata de estudiar más, sino de estudiar mejor. Enseñamos con enfoque e inteligencia.</p>
+    <div class="pilar-card reverse">
+      <div class="pilar-img">
+        <img src="./Images/Image7.png" alt="Modo Monje">
+      </div>
+      <div class="pilar-text">
+        <h3>Modo Monje</h3>
+        <p>Silencio. Enfoque. Sacrificio. Entra en aislamiento productivo y alcanza tu máximo potencial.</p>
+      </div>
     </div>
-    <div class="pilar-image right">
-      <img src="./Images/Image7.png" alt="Estrategia">
+
+    <div class="pilar-card">
+      <div class="pilar-img">
+        <img src="./Images/Image19.png" alt="Reinvéntate">
+      </div>
+      <div class="pilar-text">
+        <h3>Reinvéntate</h3>
+        <p>Rompe con el pasado, redefine tu identidad y construye una nueva versión de ti mismo desde cero.</p>
+      </div>
     </div>
-  </div>
-
-  <div class="pilar-item">
-    <div class="pilar-image left">
-      <img src="./Images/Image19.png" alt="Acción">
-    </div>
-    <div class="pilar-text right">
-      <h3>Acción</h3>
-      <p>Convertimos planes en resultados. Porque el conocimiento sin acción no transforma nada.</p>
-    </div>
-  </div>
-
-</section>
-
-
+  </section>
 
   <div class="divider"></div>
 
@@ -566,5 +464,17 @@
     <p>Deja atrás la mediocridad. Entra en el entorno donde los adolescentes se convierten en leyendas.</p>
     <a href="#" class="cta-button">¡QUIERO UNIRME!</a>
   </section>
+
+  <script>
+    window.addEventListener('scroll', function () {
+      document.querySelectorAll('.reveal, .zoom-reveal').forEach(function (el) {
+        const top = el.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (top < windowHeight - 100) {
+          el.classList.add('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
