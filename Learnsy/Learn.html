@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
     integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  
+
   <style>
     * {
       margin: 0;
@@ -219,7 +219,7 @@
       margin-bottom: 1.5rem;
     }
 
-    .why-learnsy-section {
+    .cursos-rompen-section {
       margin-top: 80px;
       text-align: center;
       padding: 40px 20px;
@@ -227,21 +227,21 @@
       border-radius: 16px;
     }
 
-    .why-title {
+    .cursos-rompen-title {
       font-size: 36px;
       font-weight: 700;
       margin-bottom: 40px;
       color: #00ff87;
     }
 
-    .why-gallery {
+    .cursos-rompen-gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 30px;
     }
 
-    .why-item {
+    .cursos-rompen-item {
       width: 300px;
       position: relative;
       overflow: hidden;
@@ -251,25 +251,24 @@
       background-color: white;
     }
 
-    .why-item:hover {
+    .cursos-rompen-item:hover {
       transform: scale(1.05);
       box-shadow: 0 15px 25px rgba(0, 255, 135, 0.4);
     }
 
-    .why-item img {
+    .cursos-rompen-item img {
       width: 100%;
       height: auto;
       border-radius: 20px 20px 0 0;
     }
 
-    .why-text {
+    .cursos-rompen-text {
       padding: 20px;
       font-size: 16px;
       font-weight: 500;
       color: #333;
     }
 
-    /* PILARES SECTION */
     .pilares-zigzag {
       padding: 4rem 0;
       background-color: #0A0A0A;
@@ -330,17 +329,109 @@
         flex-direction: column;
         gap: 1.5rem;
       }
-      
+
       .pilar-img, .pilar-text {
         width: 100%;
       }
-      
+
       .pilar-text {
         text-align: center;
       }
-      
-      
     }
+
+    /* NUEVA SECCIÓN ¿POR QUÉ LEARNSY? */
+    .porque-learnsy {
+      background-color: #eeeded;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .porque-learnsy h2 {
+      font-size: 40px;
+      color: #0fff95;
+      margin-bottom: 60px;
+      text-transform: uppercase;
+    }
+
+    .porque-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .porque-box {
+      background-color: #1d1d1d;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: left;
+      box-shadow: 0 8px 20px rgba(0, 255, 135, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .porque-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 30px rgba(0, 255, 135, 0.2);
+    }
+
+    .porque-box i {
+      font-size: 28px;
+      color: #0fff95;
+      margin-bottom: 15px;
+    }
+
+    .porque-box h4 {
+      font-size: 20px;
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .porque-box p {
+      color: #cccccc;
+      font-size: 0.95rem;
+    }
+    .porque-contenido p {
+      color: #000000;
+      font-size: 0.95rem;
+    }               
+    .porque-learnsy {
+      background-size: cover;
+      background-position: center;
+      padding: 6rem 2rem;
+      color:#000;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      transition: none;
+      transform: none;
+    
+    }
+
+    .porque-learnsy h3 {
+      font-size: 3rem;
+      font-weight: 700;
+      color:#0FFF95;
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    }
+    
+    .porque-learnsy p {
+      font-size: 1.2rem;
+      text-align: center;
+      max-width: 1000px;
+      margin: 0 auto;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+      }
+      
+
+
   </style>
 </head>
 <body>
@@ -367,28 +458,38 @@
     </div>
   </div>
 
-  <!-- ¿Por qué Learnsy? -->
-  <div class="why-learnsy-section">
-    <h2 class="why-title">¿Por qué Learnsy?</h2>
-    <div class="why-gallery">
-      <div class="why-item">
-        <img src="./Images/Image16.png" alt="Potencia tu Futuro">
-        <div class="why-text">Transformamos tu hambre de éxito en resultados reales</div>
-      </div>
-      <div class="why-item">
-        <img src="./Images/Image17.png" alt="Comunidad de Hermanos">
-        <div class="why-text">No estás solo. Aquí creces con una tribu que piensa como tú</div>
-      </div>
-      <div class="why-item">
-        <img src="./Images/Image18.png" alt="Puro Movimiento">
-        <div class="why-text">Nada de bla bla. Solo herramientas, retos y acción sin pausa</div>
+<!-- ¿Por qué Learnsy? -->
+<section class="porque-learnsy">
+  <h3>Transforma tu vida con Learnsy</h3>
+  <p>Aprende a ser la mejor versión de ti mismo a través de nuestra metodología de entrenamiento intensivo. En Learnsy, no solo obtendrás conocimientos, sino una transformación profunda que te llevará a alcanzar tus metas con disciplina y enfoque. Únete al movimiento de los que deciden no rendirse.</p>
+
+  <div class="porque-grid">
+    <div class="porque-box">
+      <div class="porque-icono">🔥</div>
+      <div class="porque-contenido">
+        <h4>Sin Excusas</h4>
+        <p>Aprendes con mentalidad de guerra. Aquí no hay espacio para débiles.</p>
       </div>
     </div>
+    <div class="porque-box">
+      <div class="porque-icono">⚔️</div>
+      <div class="porque-contenido">
+        <h4>Formación de élite</h4>
+        <p>Cada curso es un entrenamiento para romper con tu versión mediocre.</p>
+      </div>
+    </div>
+    <div class="porque-box">
+      <div class="porque-icono">🧠</div>
+      <div class="porque-contenido">
+        <h4>Reprogramación mental</h4>
+        <p>No solo aprendes, te transformas desde adentro hacia afuera.</p>
+      </div>
   </div>
+</section>
 
   <!-- PILARES ZigZag -->
    <div style="text-align: center; margin-top: 60px;">
-  <h2 class="why-title">Nuestros Pilares</h2>
+  <h2 class="cursos-rompen-title">Nuestros Pilares</h2>
 </div>
 
 
@@ -434,7 +535,31 @@
     </div>
   </section>
 
-  <div class="divider"></div>
+  <!-- Cursos que la Rompen -->
+<div class="cursos-rompen-section">
+  <h2 class="cursos-rompen-title">Cursos que la Rompen</h2>
+  <div class="cursos-rompen-gallery">
+    <div class="cursos-rompen-item">
+      <img src="./Images/Image16.png" alt="Potencia tu Futuro">
+      <div class="cursos-rompen-text">Transformamos tu hambre de éxito en resultados reales</div>
+    </div>
+    <div class="cursos-rompen-item">
+      <img src="./Images/Image17.png" alt="Comunidad de Hermanos">
+      <div class="cursos-rompen-text">No estás solo. Aquí creces con una tribu que piensa como tú</div>
+    </div>
+    <div class="cursos-rompen-item">
+      <img src="./Images/Image18.png" alt="Puro Movimiento">
+      <div class="cursos-rompen-text">Nada de bla bla. Solo herramientas, retos y acción sin pausa</div>
+    </div>
+    <div class="cursos-rompen-item">
+      <img src="./Images/Learnsy.png" alt="Elite Only">
+      <div class="cursos-rompen-text">Aquí solo crecen los mejores, nada de SIMPS</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
 
   <section class="container course-section reveal">
     <h2 class="section-title">Cursos que Transforman</h2>
@@ -456,6 +581,7 @@
       </div>
     </div>
   </section>
+
 
   <div class="divider"></div>
 
