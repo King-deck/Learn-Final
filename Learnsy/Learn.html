@@ -268,12 +268,19 @@
       font-weight: 500;
       color: #333;
     }
+ 
+/* NUEVA SECCIÓN Pilares Zig Zag */
 
     .pilares-zigzag {
       padding: 4rem 0;
       background-color: #0A0A0A;
     }
-
+    .pilares-title {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 40px;
+      color: #00ff87;
+   }
     .pilar-card {
       display: flex;
       justify-content: space-between;
@@ -339,6 +346,17 @@
       }
     }
 
+       /* Efecto de los Pilares */
+
+      .pilares-zigzag .pilar-card {
+     opacity: 0; /* Inicialmente transparentes */
+     transform: translateY(30px); /* Inicialmente desplazados 30 píxeles hacia abajo */
+     transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transición suave para opacidad y transformación */
+}
+      .pilares-zigzag .pilar-card.active {
+     opacity: 1; /* Vuelven a ser completamente visibles */
+     transform: translateY(0); /* Vuelven a su posición original */
+}
     /* NUEVA SECCIÓN ¿POR QUÉ LEARNSY? */
     .porque-learnsy {
       background-color: #eeeded;
@@ -474,7 +492,7 @@
         /* Estilos para la imagen de encima (400x500) */
         transform: rotate(-5deg); /* Inclinación */
         top: 20px;
-        left: 130px;
+        left: 200px;
         z-index: 1;
         position: absolute; /* Asegura que esté posicionada relativamente a .image-stack-left */
         width: 400px; /* Ancho de la imagen superior */
@@ -537,11 +555,18 @@
 }
 
      .image-stack-left:hover .image-top-left .stacked-image-left {
-     transform: rotate(3deg); /* Solo la rotación */
+     transform: rotate(-3deg); /* Solo la rotación */
 }
 
      .image-stack-left:hover .stacked-image-left {
      transform-origin: center center;
+}
+     .image-stack-left:hover .image-bottom-left .stacked-image-left {
+     transform: rotate(-3deg); /* Puedes cambiar el ángulo si quieres una rotación diferente */
+}
+
+     .image-bottom-left .stacked-image-left {
+     transition: transform 0.3s ease-in-out; /* Asegúrate de tener esta línea para una transición suave */
 }
   </style>
 </head>
@@ -588,7 +613,7 @@
 
   <!-- PILARES ZigZag -->
    <div style="text-align: center; margin-top: 60px;">
-  <h2 class="cursos-rompen-title">Nuestros Pilares</h2>
+  <h2 class="pilares-title">Nuestros Pilares</h2>
 </div>
 
 
@@ -651,7 +676,7 @@
       <div class="cursos-rompen-text">Nada de bla bla. Solo herramientas, retos y acción sin pausa</div>
     </div>
     <div class="cursos-rompen-item">
-      <img src="./Images/Learnsy.png" alt="Elite Only">
+      <img src="./Images/Image26.png" alt="Elite Only">
       <div class="cursos-rompen-text">Aquí solo crecen los mejores, nada de SIMPS</div>
     </div>
   </div>
@@ -690,16 +715,6 @@
     <a href="#" class="cta-button">¡QUIERO UNIRME!</a>
   </section>
 
-  <script>
-    window.addEventListener('scroll', function () {
-      document.querySelectorAll('.reveal, .zoom-reveal').forEach(function (el) {
-        const top = el.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        if (top < windowHeight - 100) {
-          el.classList.add('active');
-        }
-      });
-    });
-  </script>
+  <script src="./Learn.js"></script>
 </body>
 </html>
