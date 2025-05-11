@@ -430,8 +430,119 @@
       text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
       }
       
+      /* Opción 2: Ajustar la altura del contenedor */
+           /* Opción 2: Ajustar la altura del contenedor */
+      .why-learnsy-section {
+        display: flex;
+        align-items: flex-start; /* Alinea la parte superior de los elementos */
+        margin-left: 50px;
+        margin-right: 20px;
+        /* Opcional: Ajusta la altura mínima si es necesario */
+        /* min-height: 500px; */
+      }
 
+      .why-learnsy-background {
+        margin-top: 80px;
+        text-align: center;
+        padding: 40px 20px;
+        background: #f8f8f8;
+        border-radius: 16px;
+      }
 
+      .image-stack-left {
+        position: relative;
+        width: 600px;
+        height: 500px;
+        /* transition: transform 0.3s ease-in-out; */ /* Puedes dejar o quitar esta transición del contenedor */
+        padding-right: 10px;
+        z-index: 10;
+      }
+
+      .image-container-left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .image-bottom-left {
+        transform: rotate(-2deg);
+      }
+
+      .image-top-left {
+        /* Estilos para la imagen de encima (400x500) */
+        transform: rotate(-5deg); /* Inclinación */
+        top: 20px;
+        left: 130px;
+        z-index: 1;
+        position: absolute; /* Asegura que esté posicionada relativamente a .image-stack-left */
+        width: 400px; /* Ancho de la imagen superior */
+        height: 500px; /* Alto de la imagen superior */
+      }
+
+      .image-top-left .stacked-image-left {
+        object-fit: contain; /* Muestra la imagen completa sin recortar */
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        transform-origin: center center; /* Aseguramos que el origen de la transformación sea el centro */
+        transition: transform 0.3s ease-in-out; /* Añadimos una transición suave para la rotación */
+      }
+
+      .image-bottom-left .stacked-image-left {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+      }
+
+     .text-content {
+     position: absolute; /* Posiciona el texto absolutamente dentro de la sección */
+     top: 20px; /* Ajusta la distancia desde la parte superior */
+     left: 760px; /* Ajusta la distancia desde la derecha */
+     z-index: 2;
+     display: flex;
+     flex-direction: column;
+     align-items: flex-end;
+     text-align: right;
+     width: auto; /* Ajusta el ancho según el contenido */
+}
+
+     .text-content h2 {
+     color: #000;
+     margin-top: 0;
+     margin-bottom: 10px;
+     font-size: 4em;
+}
+
+     .text-content p {
+     color: #000;
+     margin-top: 0;
+     text-align: left;
+     text-shadow: none;
+     font-size: 1.2rem;
+     margin-bottom: 1.5rem;
+     max-width: 500px;
+} 
+     .resaltar {
+     color: #f89c1c;
+     font-weight: bold; /* Opcional: para hacer el texto más llamativo */
+}
+     .image-top-left .stacked-image-left {
+     object-fit: contain; /* Muestra la imagen completa sin recortar */
+     width: 100%;
+     height: 100%;
+     border-radius: 15px;
+}
+
+     .image-stack-left:hover .image-top-left .stacked-image-left {
+     transform: rotate(3deg); /* Solo la rotación */
+}
+
+     .image-stack-left:hover .stacked-image-left {
+     transform-origin: center center;
+}
   </style>
 </head>
 <body>
@@ -458,34 +569,22 @@
     </div>
   </div>
 
-<!-- ¿Por qué Learnsy? -->
-<section class="porque-learnsy">
-  <h3>Transforma tu vida con Learnsy</h3>
-  <p>Aprende a ser la mejor versión de ti mismo a través de nuestra metodología de entrenamiento intensivo. En Learnsy, no solo obtendrás conocimientos, sino una transformación profunda que te llevará a alcanzar tus metas con disciplina y enfoque. Únete al movimiento de los que deciden no rendirse.</p>
+  <section class="why-learnsy-background">
+  <div class="image-stack-left">
+    <div class="image-container-left image-bottom-left">
+        <img src="./Images/Image24.png" alt="Imagen 20" class="stacked-image-left">
+    </div>
+    <div class="image-container-left image-top-left">
+        <img src="./Images/Image22.png" alt="Imagen 21" class="stacked-image-left">
+    </div>
+    <div class="text-content">
+    <h2>¿Por Que Learnsy?</h2>
+<p>Porque no naciste para conformarte.<br> Por que este 
+<span class="resaltar">Desafio</span> no es solo un aprendizaje, es una forja de <span class="resaltar">Mentalidad</span>.<br>Aquí no vienes a aprender lo que te enseñan todos, vienes a <span class="resaltar">Dominar</span> lo que nadie te enseña</p>
+</div>
+    </section>
+</div>
 
-  <div class="porque-grid">
-    <div class="porque-box">
-      <div class="porque-icono">🔥</div>
-      <div class="porque-contenido">
-        <h4>Sin Excusas</h4>
-        <p>Aprendes con mentalidad de guerra. Aquí no hay espacio para débiles.</p>
-      </div>
-    </div>
-    <div class="porque-box">
-      <div class="porque-icono">⚔️</div>
-      <div class="porque-contenido">
-        <h4>Formación de élite</h4>
-        <p>Cada curso es un entrenamiento para romper con tu versión mediocre.</p>
-      </div>
-    </div>
-    <div class="porque-box">
-      <div class="porque-icono">🧠</div>
-      <div class="porque-contenido">
-        <h4>Reprogramación mental</h4>
-        <p>No solo aprendes, te transformas desde adentro hacia afuera.</p>
-      </div>
-  </div>
-</section>
 
   <!-- PILARES ZigZag -->
    <div style="text-align: center; margin-top: 60px;">
