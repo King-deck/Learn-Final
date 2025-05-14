@@ -9,206 +9,303 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
+    * /* --- Estilos Generales --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
 
-    body {
-      background-color: #0A0A0A;
-      color: white;
-      line-height: 1.4;
-      overflow-x: hidden;
-      font-size: 14px;
-    }
+body {
+    background-color: #0A0A0A;
+    color: white;
+    line-height: 1.4;
+    overflow-x: hidden;
+    font-size: 14px;
+}
 
-    .container {
-      width: 90%;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 1.5rem 0;
-    }
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1.5rem 0;
+}
 
-    .header {
-      display: flex;
-      justify-content: space-between;
-      padding: 0.8rem 0;
-      align-items: center;
-      margin-bottom: 2rem;
-    }
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+    align-items: center;
+    margin-bottom: 2rem;
+    margin-left: -80px
+}
 
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-    }
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
 
-    .main-title {
-      font-weight: 800;
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-      line-height: 1.2;
-      text-transform: uppercase;
-    }
+.main-title {
+    font-weight: 800;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin-left: -80px
+}
 
-    .subtitle {
-      color: #CCCCCC;
-      font-size: 0.95rem;
-      margin-bottom: 1.5rem;
-      max-width: 500px;
-    }
+.subtitle {
+    color: #CCCCCC;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    max-width: 500px;
+    margin-left: -80px
+}
 
-    .cta-button {
-      background-color: #0FFF95;
-      color: #000;
-      border-radius: 6px;
-      padding: 0.6rem 1.4rem;
-      font-weight: 700;
-      border: none;
-      font-size: 0.85rem;
-      transition: all 0.3s;
-      cursor: pointer;
-      text-transform: uppercase;
-      text-decoration: none;
-      display: inline-block;
-    }
+.cta-button {
+    background-color: #0FFF95;
+    color: #000;
+    border-radius: 6px;
+    padding: 0.6rem 1.4rem;
+    font-weight: 700;
+    border: none;
+    font-size: 0.85rem;
+    transition: all 0.3s;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: -80px
+}
 
-    .cta-button:hover {
-      background-color: #0ad87b;
-      transform: scale(1.05);
-    }
+.cta-button:hover {
+    background-color: #0ad87b;
+    transform: scale(1.05);
+}
 
-    .columns {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-    }
+.header .cta-button {
+    margin-left: -50px; /* Ajusta este valor para moverlo a la izquierda */
+}
 
-    .column {
-      flex: 1;
-      min-width: 280px;
-    }
+.columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 90px;
+}
 
-    .image-container {
-      position: relative;
-      width: 100%;
-      max-width: 400px;
-      margin: 0 auto;
-      height: auto;
-      aspect-ratio: 4 / 3;
-    }
+.column {
+    flex: 1;
+    min-width: 280px;
+}
 
-     .main-image {
-     position: absolute;
-     top: 0;
-     left: 0;
-     z-index: 2;
-     transform: rotate(-5deg) translate(-10px, -10px);
+.image-container {
+    position: relative;
+    width: 100%; /* Asegura que el contenedor ocupe el ancho disponible */
+    max-width: 400px; /* Aumentamos el ancho máximo del contenedor */
+    margin: 0 auto;
+    height: auto;
+    aspect-ratio: 4 / 3;
+}
+
+.main-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 120%; /* Aumentamos el ancho */
+    transform: rotate(-5deg) translate(-20px, -20px); /* Ajustamos la transformación inicial */
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.8s ease-out;
+}
+
+.overlay-image {
+    position: absolute;
+    top: 30px; /* Ajustamos la posición top */
+    right: 10px; /* Ajustamos la posición right */
+    z-index: 3;
+    width: 80%; /* Aumentamos el ancho */
+    transform: rotate(8deg);
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.8s ease-out;
+}
+
+.divider {
+    border-top: 1px solid #333;
+    margin: 3rem auto;
+    width: 80%;
+}
+
+section {
+    padding: 3rem 0;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(20px) translateX(-30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+}
+
+.reveal.active .main-image {
+    transform: rotate(-5deg) translate(0, -15px); /* Ajustamos la transformación activa */
+}
+
+.reveal.active .overlay-image {
+    transform: rotate(8deg) translateX(10px); /* Ajustamos la transformación activa */
+}
+
+/* NUEVA SECCIÓN ¿POR QUÉ LEARNSY? */
+ 
+      
+      /* Opción 2: Ajustar la altura del contenedor */
+           /* Opción 2: Ajustar la altura del contenedor */
+      .why-learnsy-section {
+        display: flex;
+        align-items: flex-start; /* Alinea la parte superior de los elementos */
+        margin-left: 50px;
+        margin-right: 20px;
+        /* Opcional: Ajusta la altura mínima si es necesario */
+        /* min-height: 500px; */
+      }
+
+      .why-learnsy-background {
+   margin-top: 90px;
+  text-align: center;
+  padding: 40px 10px 80px;
+  background: #f8f8f8;
+  border-radius: 16px;
+  opacity: 0; /* Inicialmente invisible */
+  transform: translateY(50px); /* Inicialmente un poco abajo */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transición suave para opacidad y posición */
+}
+
+.why-learnsy-background.visible {
+  opacity: 1; /* Totalmente visible */
+  transform: translateY(0); /* En su posición original */
+}
+
+      .image-stack-left {
+        position: relative;
+        width: 600px;
+        height: 500px;
+        /* transition: transform 0.3s ease-in-out; */ /* Puedes dejar o quitar esta transición del contenedor */
+        padding-right: 10px;
+        z-index: 10;
+        margin-left: 1px;
+      }
+
+      .image-container-left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .image-bottom-left {
+        transform: rotate(-2deg);
+      }
+
+      .image-top-left {
+        /* Estilos para la imagen de encima (400x500) */
+        transform: rotate(-5deg); /* Inclinación */
+        top: 20px;
+        left: 200px;
+        z-index: 1;
+        position: absolute; /* Asegura que esté posicionada relativamente a .image-stack-left */
+        width: 400px; /* Ancho de la imagen superior */
+        height: 500px; /* Alto de la imagen superior */
+      }
+
+      .image-top-left .stacked-image-left {
+        object-fit: contain; /* Muestra la imagen completa sin recortar */
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        transform-origin: center center; /* Aseguramos que el origen de la transformación sea el centro */
+        transition: transform 0.3s ease-in-out; /* Añadimos una transición suave para la rotación */
+      }
+
+      .image-bottom-left .stacked-image-left {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+      }
+
+       .text-content {
+   position: absolute; /* Posiciona el texto absolutamente dentro de la sección */
+   top: 120px; /* Ajusta la distancia desde la parte superior */
+   left: auto;
+   right: 90px; /* O el valor que tengas */
+   z-index: 2;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-end;
+   text-align: right;
+   width: auto;
+   margin-top: 20px; /* Prueba con un valor mayor para bajarlo más */
+}
+
+     .text-content h2 {
+     color: #000;
+     margin-top: 0;
+     margin-bottom: 10px;
+     font-size: 4em;
+}
+
+     .text-content p {
+     color: #000;
+     margin-top: 0;
+     text-align: left;
+     text-shadow: none;
+     font-size: 1.2rem;
+     margin-bottom: 1.5rem;
+     max-width: 500px;
+} 
+     .resaltar {
+     color: #f89c1c;
+     font-weight: bold; /* Opcional: para hacer el texto más llamativo */
+}
+     .image-top-left .stacked-image-left {
+     object-fit: contain; /* Muestra la imagen completa sin recortar */
      width: 100%;
-     border-radius: 12px;
-     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-     /* Añadimos una transición para la propiedad transform */
-     transition: transform 0.8s ease-out;
+     height: 100%;
+     border-radius: 15px;
 }
 
-    .overlay-image {
-      position: absolute;
-      top: 50px;
-      right: 20px;
-      z-index: 3;
-      transform: rotate(8deg);
-      width: 60%;
-      border-radius: 12px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-      transition: transform 0.8s ease-out;
-    }
-
-    .divider {
-      border-top: 1px solid #333;
-      margin: 3rem auto;
-      width: 80%;
-    }
-
-    section {
-      padding: 3rem 0;
-    }
-
-     .reveal {
-     opacity: 0;
-     /* Combinamos las transformaciones iniciales: bajar y un poco a la izquierda */
-     transform: translateY(20px) translateX(-30px);
-     transition: all 0.8s ease-out;
-  }
-
-     .reveal.active {
-     opacity: 1;
-    /* Combinamos las transformaciones al estar activo: subir y volver al centro horizontal */
-     transform: translateY(0) translateX(0);
-  }
-
-     .reveal.active .main-image {
-     transform: rotate(-5deg) translate(0, -10px); /* Se mueve a la derecha (el translate X es 0) */
-  }
-
-      .reveal.active .overlay-image {
-     transform: rotate(8deg) translateX(0); /* Se mueve a la derecha (el translate X es 0) */
-  }
-
-/* NUEVA SECCIÓN Conoce a nuestro equipo */
-
-     .equipo-section {
-     margin-top: 80px;
-     text-align: center;
-     padding: 40px 20px;
-     background: #f8f8f8;
-     border-radius: 16px;
+     .image-stack-left:hover .image-top-left .stacked-image-left {
+     transform: rotate(-3deg); /* Solo la rotación */
 }
 
-     .equipo-title {
-     font-size: 36px;
-     font-weight: 700;
-     margin-bottom: 40px;
-     color: #00ff87; /* Manteniendo el color */
+     .image-stack-left:hover .stacked-image-left {
+     transform-origin: center center;
+}
+     .image-stack-left:hover .image-bottom-left .stacked-image-left {
+     transform: rotate(-3deg); /* Puedes cambiar el ángulo si quieres una rotación diferente */
 }
 
-     .equipo-gallery {
-     display: flex;
-     flex-wrap: wrap;
-     justify-content: center;
-     gap: 30px;
+     .image-bottom-left .stacked-image-left {
+     transition: transform 0.3s ease-in-out; /* Asegúrate de tener esta línea para una transición suave */
 }
-
-     .equipo-item {
-     width: 300px;
-     position: relative;
-     overflow: hidden;
-     border-radius: 20px;
-     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-     transition: transform 0.3s ease, box-shadow 0.3s ease;
-     background-color: white;
+.reveal {
+  opacity: 0;
+  transform: translateY(50px); /* Puedes ajustar la distancia del deslizamiento */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
-
-      .equipo-item:hover {
-     transform: scale(1.05);
-     box-shadow: 0 15px 25px rgba(0, 255, 135, 0.4); /* Manteniendo el color */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
-
-     .equipo-item img {
-     width: 100%;
-     height: auto;
-     border-radius: 20px 20px 0 0;
-}
-
-     .equipo-text {
-     padding: 20px;
-     font-size: 16px;
-     font-weight: 500;
-     color: #333;
-}
-
  
 /* NUEVA SECCIÓN Pilares Zig Zag */
 
@@ -298,152 +395,59 @@
      opacity: 1; /* Vuelven a ser completamente visibles */
      transform: translateY(0); /* Vuelven a su posición original */
 }
-    /* NUEVA SECCIÓN ¿POR QUÉ LEARNSY? */
- 
-      
-      /* Opción 2: Ajustar la altura del contenedor */
-           /* Opción 2: Ajustar la altura del contenedor */
-      .why-learnsy-section {
-        display: flex;
-        align-items: flex-start; /* Alinea la parte superior de los elementos */
-        margin-left: 50px;
-        margin-right: 20px;
-        /* Opcional: Ajusta la altura mínima si es necesario */
-        /* min-height: 500px; */
-      }
 
-      .why-learnsy-background {
-        margin-top: 90px;
-        text-align: center;
-        padding: 40px 10px;
-        padding-bottom: 80px;
-        background: #f8f8f8;
-        border-radius: 16px;
-      }
+/* NUEVA SECCIÓN Conoce a nuestro equipo */
 
-      .image-stack-left {
-        position: relative;
-        width: 600px;
-        height: 500px;
-        /* transition: transform 0.3s ease-in-out; */ /* Puedes dejar o quitar esta transición del contenedor */
-        padding-right: 10px;
-        z-index: 10;
-        margin-left: 70px;
-      }
-
-      .image-container-left {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
-
-      .image-bottom-left {
-        transform: rotate(-2deg);
-      }
-
-      .image-top-left {
-        /* Estilos para la imagen de encima (400x500) */
-        transform: rotate(-5deg); /* Inclinación */
-        top: 20px;
-        left: 200px;
-        z-index: 1;
-        position: absolute; /* Asegura que esté posicionada relativamente a .image-stack-left */
-        width: 400px; /* Ancho de la imagen superior */
-        height: 500px; /* Alto de la imagen superior */
-      }
-
-      .image-top-left .stacked-image-left {
-        object-fit: contain; /* Muestra la imagen completa sin recortar */
-        width: 100%;
-        height: 100%;
-        border-radius: 15px;
-        transform-origin: center center; /* Aseguramos que el origen de la transformación sea el centro */
-        transition: transform 0.3s ease-in-out; /* Añadimos una transición suave para la rotación */
-      }
-
-      .image-bottom-left .stacked-image-left {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-        border-radius: 15px;
-      }
-
-     .text-content {
-     position: absolute; /* Posiciona el texto absolutamente dentro de la sección */
-     top: 20px; /* Ajusta la distancia desde la parte superior */
-     left: auto;
-     right: 90px; /* O el valor que tengas */
-     z-index: 2;
-     display: flex;
-     flex-direction: column;
-     align-items: flex-end;
-     text-align: right;
-     width: auto;
-     margin-top: 680px; /* Prueba con un valor mayor para bajarlo más */
+     .equipo-section {
+     margin-top: 80px;
+     text-align: center;
+     padding: 40px 20px;
+     background: #f8f8f8;
+     border-radius: 16px;
 }
 
-     .text-content h2 {
-     color: #000;
-     margin-top: 0;
-     margin-bottom: 10px;
-     font-size: 4em;
-}
-
-     .text-content p {
-     color: #000;
-     margin-top: 0;
-     text-align: left;
-     text-shadow: none;
-     font-size: 1.2rem;
-     margin-bottom: 1.5rem;
-     max-width: 500px;
-} 
-     .resaltar {
-     color: #f89c1c;
-     font-weight: bold; /* Opcional: para hacer el texto más llamativo */
-}
-     .image-top-left .stacked-image-left {
-     object-fit: contain; /* Muestra la imagen completa sin recortar */
-     width: 100%;
-     height: 100%;
-     border-radius: 15px;
-}
-
-     .image-stack-left:hover .image-top-left .stacked-image-left {
-     transform: rotate(-3deg); /* Solo la rotación */
-}
-
-     .image-stack-left:hover .stacked-image-left {
-     transform-origin: center center;
-}
-     .image-stack-left:hover .image-bottom-left .stacked-image-left {
-     transform: rotate(-3deg); /* Puedes cambiar el ángulo si quieres una rotación diferente */
-}
-
-     .image-bottom-left .stacked-image-left {
-     transition: transform 0.3s ease-in-out; /* Asegúrate de tener esta línea para una transición suave */
-}
-/* NUEVA SECCion Conoce a nuestro equipo */
-
-     .cursos-section-learnsy {
-     padding: 60px 20px;
-     background-color: #0A0A0A; /* Fondo negro */
-     color: #fff;
-     overflow: hidden;
-}
-
-     .cursos-title-learnsy {
-     font-size: 2.5rem;
+     .equipo-title {
+     font-size: 36px;
      font-weight: 700;
      margin-bottom: 40px;
-     letter-spacing: -1px;
+     color: #00ff87; /* Manteniendo el color */
 }
 
-     .linea-resaltada {
-     color: #00ff87; /* Verde neón */
+     .equipo-gallery {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     gap: 30px;
 }
+
+     .equipo-item {
+     width: 300px;
+     position: relative;
+     overflow: hidden;
+     border-radius: 20px;
+     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+     background-color: white;
+}
+
+      .equipo-item:hover {
+     transform: scale(1.05);
+     box-shadow: 0 15px 25px rgba(0, 255, 135, 0.4); /* Manteniendo el color */
+}
+
+     .equipo-item img {
+     width: 100%;
+     height: auto;
+     border-radius: 20px 20px 0 0;
+}
+
+     .equipo-text {
+     padding: 20px;
+     font-size: 16px;
+     font-weight: 500;
+     color: #333;
+}
+
 
 /* Cursos que transforman */
 
@@ -631,43 +635,45 @@
   </style>
 </head>
 <body>
-  <div class="container">
-  <div class="header">
-    <div class="logo">LEARNSY</div>
-    <a href="#" class="cta-button">¡QUIERO UNIRME!</a>
-  </div>
-
-  <div class="columns">
-    <div class="column">
-      <h1 class="main-title">FORJANDO LEYENDAS DESDE LA AMBICIÓN ADOLESCENTE</h1>
-      <p class="subtitle">No es una escuela. Es una forja.
-        Aquí los chavales con hambre de grandeza se convierten en máquinas de disciplina, visión y acción.
-        Cursos, retos y herramientas para romper el ciclo y construir tu mejor versión</p>
-      <a href="#" class="cta-button">¡QUIERO UNIRME!</a>
+<div class="container">
+    <div class="header">
+      <div class="logo">LEARNSY</div>
     </div>
-    <div class="column reveal"> <div class="image-container">
-        <img src="./Images/Image3.png" class="main-image" alt="Imagen principal">
-        <img src="./Images/Image2.png" class="overlay-image" alt="Imagen secundaria">
+
+    <div class="columns">
+      <div class="column">
+        <h1 class="main-title">FORJANDO LEYENDAS DESDE LA AMBICIÓN ADOLESCENTE</h1>
+        <p class="subtitle">No es una escuela. Es una forja.
+          Aquí los chavales con hambre de grandeza se convierten en máquinas de disciplina, visión y acción.
+          Cursos, retos y herramientas para romper el ciclo y construir tu mejor versión</p>
+        <a href="#" class="cta-button">¡QUIERO UNIRME!</a>
+      </div>
+      <div class="column reveal">
+        <div class="image-container">
+          <img src="./Images/Image3.png" class="main-image" alt="Imagen principal">
+          <img src="./Images/Image2.png" class="overlay-image" alt="Imagen secundaria">
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<section class="why-learnsy-background">
-  <div class="image-stack-left">
-    <div class="image-container-left image-bottom-left">
-      <img src="./Images/Image24.png" alt="Imagen 20" class="stacked-image-left">
+<section class="why-learnsy-background reveal">
+  <div class="why-learnsy-section">
+    <div class="image-stack-left">
+      <div class="image-container-left image-bottom-left">
+        <img src="./Images/Image24.png" alt="Imagen 20" class="stacked-image-left">
+      </div>
+      <div class="image-container-left image-top-left">
+        <img src="./Images/Image22.png" alt="Imagen 21" class="stacked-image-left">
+      </div>
     </div>
-    <div class="image-container-left image-top-left">
-      <img src="./Images/Image22.png" alt="Imagen 21" class="stacked-image-left">
+    <div class="text-content">
+      <h2>¿Por Que Learnsy?</h2>
+      <p>Porque no naciste para conformarte.<br> Por que este
+        <span class="resaltar">Desafio</span> no es solo un aprendizaje, es una forja de <span class="resaltar">Mentalidad</span>.<br>Aquí no vienes a aprender lo que te enseñan todos, vienes a <span class="resaltar">Dominar</span> lo que nadie te enseña
+        No buscamos estudiantes. Buscamos líderes, disruptores, visionarios.
+      </p>
     </div>
-  </div>
-  <div class="text-content">
-    <h2>¿Por Que Learnsy?</h2>
-    <p>Porque no naciste para conformarte.<br> Por que este
-      <span class="resaltar">Desafio</span> no es solo un aprendizaje, es una forja de <span class="resaltar">Mentalidad</span>.<br>Aquí no vienes a aprender lo que te enseñan todos, vienes a <span class="resaltar">Dominar</span> lo que nadie te enseña 
-             No buscamos estudiantes. Buscamos líderes, disruptores, visionarios.
-    </p>
   </div>
 </section>
 
