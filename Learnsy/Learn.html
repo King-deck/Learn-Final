@@ -53,7 +53,8 @@ body {
     margin-bottom: 1rem;
     line-height: 1.2;
     text-transform: uppercase;
-    margin-left: -80px
+    margin-left: -80px;
+    margin-top: 80px;
 }
 
 .subtitle {
@@ -61,7 +62,8 @@ body {
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
     max-width: 500px;
-    margin-left: -80px
+    margin-left: -80px;
+    margin-top: 30px;
 }
 
 .cta-button {
@@ -77,7 +79,8 @@ body {
     text-transform: uppercase;
     text-decoration: none;
     display: inline-block;
-    margin-left: -80px
+    margin-left: -80px;
+    margin-top: 40px;
 }
 
 .cta-button:hover {
@@ -112,7 +115,7 @@ body {
 
 .main-image {
     position: absolute;
-    top: 0;
+    top: 50px;
     left: 0;
     z-index: 2;
     width: 120%; /* Aumentamos el ancho */
@@ -124,7 +127,7 @@ body {
 
 .overlay-image {
     position: absolute;
-    top: 30px; /* Ajustamos la posición top */
+    top: 90px; /* Ajustamos la posición top */
     right: 10px; /* Ajustamos la posición right */
     z-index: 3;
     width: 80%; /* Aumentamos el ancho */
@@ -165,146 +168,35 @@ section {
 
 /* NUEVA SECCIÓN ¿POR QUÉ LEARNSY? */
  
-      
-      /* Opción 2: Ajustar la altura del contenedor */
-           /* Opción 2: Ajustar la altura del contenedor */
-      .why-learnsy-section {
-        display: flex;
-        align-items: flex-start; /* Alinea la parte superior de los elementos */
-        margin-left: 50px;
-        margin-right: 20px;
-        /* Opcional: Ajusta la altura mínima si es necesario */
-        /* min-height: 500px; */
-      }
-
-      .why-learnsy-background {
-   margin-top: 90px;
+/* --- Sección ¿Por Qué Learnsy? (Solo rectángulo de fondo) --- */
+.why-learnsy-background {
+  margin-top: 90px;
   text-align: center;
-  padding: 40px 10px 80px;
-  background: #f8f8f8;
+  padding: 100px 20px; /* Ajusta el padding para darle espacio al rectángulo */
+  background: #f8f8f8; /* Puedes mantener un color de fondo general si quieres */
   border-radius: 16px;
-  opacity: 0; /* Inicialmente invisible */
-  transform: translateY(50px); /* Inicialmente un poco abajo */
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transición suave para opacidad y posición */
-}
-
-.why-learnsy-background.visible {
-  opacity: 1; /* Totalmente visible */
-  transform: translateY(0); /* En su posición original */
-}
-
-      .image-stack-left {
-        position: relative;
-        width: 600px;
-        height: 500px;
-        /* transition: transform 0.3s ease-in-out; */ /* Puedes dejar o quitar esta transición del contenedor */
-        padding-right: 10px;
-        z-index: 10;
-        margin-left: 1px;
-      }
-
-      .image-container-left {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
-
-      .image-bottom-left {
-        transform: rotate(-2deg);
-      }
-
-      .image-top-left {
-        /* Estilos para la imagen de encima (400x500) */
-        transform: rotate(-5deg); /* Inclinación */
-        top: 20px;
-        left: 200px;
-        z-index: 1;
-        position: absolute; /* Asegura que esté posicionada relativamente a .image-stack-left */
-        width: 400px; /* Ancho de la imagen superior */
-        height: 500px; /* Alto de la imagen superior */
-      }
-
-      .image-top-left .stacked-image-left {
-        object-fit: contain; /* Muestra la imagen completa sin recortar */
-        width: 100%;
-        height: 100%;
-        border-radius: 15px;
-        transform-origin: center center; /* Aseguramos que el origen de la transformación sea el centro */
-        transition: transform 0.3s ease-in-out; /* Añadimos una transición suave para la rotación */
-      }
-
-      .image-bottom-left .stacked-image-left {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-        border-radius: 15px;
-      }
-
-       .text-content {
-   position: absolute; /* Posiciona el texto absolutamente dentro de la sección */
-   top: 120px; /* Ajusta la distancia desde la parte superior */
-   left: auto;
-   right: 90px; /* O el valor que tengas */
-   z-index: 2;
-   display: flex;
-   flex-direction: column;
-   align-items: flex-end;
-   text-align: right;
-   width: auto;
-   margin-top: 20px; /* Prueba con un valor mayor para bajarlo más */
-}
-
-     .text-content h2 {
-     color: #000;
-     margin-top: 0;
-     margin-bottom: 10px;
-     font-size: 4em;
-}
-
-     .text-content p {
-     color: #000;
-     margin-top: 0;
-     text-align: left;
-     text-shadow: none;
-     font-size: 1.2rem;
-     margin-bottom: 1.5rem;
-     max-width: 500px;
-} 
-     .resaltar {
-     color: #f89c1c;
-     font-weight: bold; /* Opcional: para hacer el texto más llamativo */
-}
-     .image-top-left .stacked-image-left {
-     object-fit: contain; /* Muestra la imagen completa sin recortar */
-     width: 100%;
-     height: 100%;
-     border-radius: 15px;
-}
-
-     .image-stack-left:hover .image-top-left .stacked-image-left {
-     transform: rotate(-3deg); /* Solo la rotación */
-}
-
-     .image-stack-left:hover .stacked-image-left {
-     transform-origin: center center;
-}
-     .image-stack-left:hover .image-bottom-left .stacked-image-left {
-     transform: rotate(-3deg); /* Puedes cambiar el ángulo si quieres una rotación diferente */
-}
-
-     .image-bottom-left .stacked-image-left {
-     transition: transform 0.3s ease-in-out; /* Asegúrate de tener esta línea para una transición suave */
-}
-.reveal {
   opacity: 0;
-  transform: translateY(50px); /* Puedes ajustar la distancia del deslizamiento */
+  transform: translateY(50px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  position: relative; /* Necesario para posicionar el rectángulo */
+  overflow: hidden; /* Para que los bordes redondeados se vean bien */
 }
-.reveal.active {
+
+.why-learnsy-background.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+.fondo-con-bordes {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px; /* Ajusta el ancho del rectángulo */
+  height: 300px; /* Ajusta la altura del rectángulo */
+  background-color: #e0e0e0; /* El color del rectángulo */
+  border-radius: 30px; /* Ajusta el radio para redondear las esquinas */
+  transform: translate(-50%, -50%); /* Centra el rectángulo */
+  z-index: 0; /* Asegura que esté detrás de cualquier otro contenido futuro */
 }
  
 /* NUEVA SECCIÓN Pilares Zig Zag */
@@ -314,17 +206,18 @@ section {
       background-color: #0A0A0A;
     }
     .pilares-title {
-      font-size: 36px;
-      font-weight: 700;
-      margin-bottom: 40px;
-      color: #00ff87;
+      color:#00ff87;
+        font-weight: 800;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
    }
     .pilar-card {
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 3rem;
-      margin-bottom: 5rem;
+      margin-bottom: 17rem;
       max-width: 1200px;
       margin-left: auto;
       margin-right: auto;
@@ -358,9 +251,11 @@ section {
     }
 
     .pilar-text h3 {
-      font-size: 2rem;
-      color: #0fff95;
-      margin-bottom: 1rem;
+      color: #00ff87;
+          font-weight: 800;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
     }
 
     .pilar-text p {
@@ -394,23 +289,36 @@ section {
       .pilares-zigzag .pilar-card.active {
      opacity: 1; /* Vuelven a ser completamente visibles */
      transform: translateY(0); /* Vuelven a su posición original */
+     .pilares-zigzag .pilar-card.last-pilar {
+  margin-bottom: 20rem; /* Ajusta este valor al espacio que desees antes de la siguiente sección */
+
+  .pilares-zigzag .pilar-card.last-pilar {
+  margin-bottom: 2rem; /* Ajusta este valor al espacio que desees antes de la siguiente sección */
+}
+}
 }
 
 /* NUEVA SECCIÓN Conoce a nuestro equipo */
 
      .equipo-section {
-     margin-top: 80px;
-     text-align: center;
-     padding: 40px 20px;
-     background: #f8f8f8;
-     border-radius: 16px;
+  margin-top: 80px;
+  text-align: center;
+  padding: 40px 20px;
+  background: #f8f8f8;
+  border-radius: 16px;
+  opacity: 0; /* Inicialmente invisible */
+  transform: translateY(30px); /* Inicialmente un poco abajo */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
+
      .equipo-title {
-     font-size: 36px;
-     font-weight: 700;
-     margin-bottom: 40px;
-     color: #00ff87; /* Manteniendo el color */
+      color: #00ff87;
+     font-weight: 800;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    margin-bottom: 40px;
 }
 
      .equipo-gallery {
@@ -447,190 +355,118 @@ section {
      font-weight: 500;
      color: #333;
 }
-
-
-/* Cursos que transforman */
-
-     .cursos-grid-learnsy {
-     display: grid;
-     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-     gap: 30px;
-     max-width: 1200px;
-     margin: 0 auto;
+.equipo-section.active {
+  opacity: 1; /* Totalmente visible */
+  transform: translateY(0); /* En su posición original */
 }
-
-     .curso-card-learnsy {
-     background-color: #0A0A0A; /* Gris oscuro */
-     border-radius: 10px;
-     overflow: hidden;
-     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-     .curso-card-learnsy:hover {
-     transform: translateY(-5px);
-     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-}
-
-     .curso-imagen-container-learnsy {
-     position: relative;
-     overflow: hidden;
-     border-radius: 10px 10px 0 0;
-     height: 400px;
-}
-
-     .curso-imagen-container-learnsy img {
-     width: 100%;
-     height: 100%;
-     object-fit: cover;
-}
-
-     .curso-info-learnsy {
-     padding: 20px;
-     text-align: left;
-     display: flex;
-     flex-direction: column;
-     gap: 12px;
-}
-
-     .curso-info-learnsy h3 {
-     font-size: 1.4rem;
-     font-weight: 600;
-     color: #00ff87; /* Verde neón */
-     margin-bottom: 5px;
-}
-
-     .curso-info-learnsy p {
-     font-size: 1rem;
-     line-height: 1.6;
-     color: #ccc;
-}
-
-    /* Es hora de cambiar*/
-/* Estilos base para la sección "Es hora de cambiar" */
+/* --- Sección ¿Estás Listo Para Cambiar? --- */
 .es-hora-de-cambiar-section {
-    margin-top: 90px;
-    text-align: left;
-    padding: 40px 10px;
-    background: #ffffff; /* Color de fondo para ambas secciones (por defecto) */
-    border-radius: 16px;
-    display: flex;
-    align-items: center; /* Centra verticalmente la imagen y el texto */
-    max-width: 1300px;
-    margin-left: auto;
-    margin-right: auto;
-    transition: box-shadow 0.3s ease-in-out, opacity 0.5s ease-out, transform 0.5s ease-out; /* Transiciones para sombra, opacidad y transformación */
-    opacity: 0; /* Inicialmente ocultos */
-    transform: translateY(50px); /* Inicialmente deslizados hacia abajo (opcional) */
+  background-color: #0A0A0A; /* Un fondo oscuro para contrastar */
+  padding: 4rem 0;
+  color: white;
+  opacity: 0; /* Inicialmente invisible */
+  transform: translateX(50px); /* Inicialmente un poco a la derecha */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transición suave */
 }
 
 .es-hora-de-cambiar-section.active {
-    opacity: 1; /* Se vuelven completamente visibles */
-    transform: translateY(0); /* Vuelven a su posición original (si usaste translateY) */
+  opacity: 1; /* Totalmente visible */
+  transform: translateX(0); /* En su posición original */
 }
 
-.es-hora-de-cambiar-section:hover {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Ajusta los valores para la intensidad y dirección de la sombra */
+.cambiar-container {
+  display: flex;
+  justify-content: space-between; /* Texto a la izquierda, imagen a la derecha */
+  align-items: center; /* Centrar verticalmente */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  gap: 2rem; /* Espacio entre texto e imagen */
 }
 
-.imagen-stack-derecha-cambiar {
-    position: relative;
-    width: 500px; /* Ajusta el ancho según necesites */
-    height: 400px; /* Ajusta la altura según necesites */
+.cambiar-text {
+  flex: 1; /* El texto ocupa la mayor parte del espacio disponible */
+  text-align: left;
 }
 
-.imagen-container-derecha-cambiar {
-    width: 100%;
-    height: 100%;
+.cambiar-text h2 {
+    font-weight: 800;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin-left: 4px;
+    margin-top: 10px
 }
 
-.imagen-apilada-derecha-cambiar {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    border-radius: 15px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease-in-out;
+
+.cambiar-text p {
+  color: #CCCCCC;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-top: 4rem;
 }
 
-.texto-contenido-izquierda-cambiar {
-    flex: 1;
-    padding-left: 40px;
+.cambiar-image {
+  flex: 1; /* La imagen ocupa la otra parte del espacio */
+  text-align: center; /* Centrar la imagen y el botón */
 }
 
-.texto-contenido-izquierda-cambiar h2 {
-    font-size: 3.5rem; /* Aumenta el tamaño del título para ambas imágenes */
-    font-weight: 700;
-    color: #000000;
+.cambiar-image img {
+  max-width: 85%; /* La imagen no excederá su contenedor */
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 0rem; /* Espacio entre la imagen y el botón */
+  margin-top: 7rem; /* MODIFICADO: Añadimos un margen superior */
+}
+
+.cambiar-button {
+  background-color: #f89c1c; /* Un color diferente para este botón */
+  color: #000;
+  border-radius: 6px;
+  padding: 0.8rem 2rem;
+  font-weight: 700;
+  border: none;
+  font-size: 1rem;
+  transition: all 0.3s;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 3rem;
+}
+
+.cambiar-button:hover {
+  background-color: #e08a0e;
+  transform: scale(1.05);
+}
+
+/* Media query para pantallas más pequeñas (invertir el orden) */
+@media (max-width: 768px) {
+  .cambiar-container {
+    flex-direction: column; /* Texto arriba, imagen abajo */
+    text-align: center;
+  }
+
+  .cambiar-text {
+    text-align: center;
     margin-bottom: 2rem;
-}
+  }
 
-.texto-contenido-izquierda-cambiar p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #000000;
-    margin-bottom: 30px; /* Añade margen inferior para separar del botón */
+  .cambiar-image {
+    text-align: center;
+  }
+  /* Divider */
 }
-
-/* Estilos del botón */
-.boton-cambiar {
-    display: inline-block;
-    padding: 15px 30px; /* Aumenta el padding para hacerlo más grande */
-    background-color: #00ff87; /* Verde brillante */
-    color: #000; /* Texto negro */
-    text-decoration: none;
-    border-radius: 10px; /* Bordes más redondeados */
-    font-weight: 700; /* Texto en negrita */
-    font-size: 1.2rem; /* Ajusta el tamaño de la fuente si es necesario */
-    transition: background-color 0.3s ease; /* Mantiene la transición */
-    border: none; /* Elimina cualquier borde predeterminado del botón */
-    cursor: pointer; /* Cambia el cursor al pasar por encima */
+.divider {
+  border-top: 1px solid #00ff87 ;
+  margin: 3rem auto;
+  width: 97%;
 }
-
-.boton-cambiar:hover {
-    background-color: #00cc66; /* Un tono ligeramente más oscuro al pasar el ratón */
-}
-
-/* Zig-zag effect - Ajuste de posición de las imágenes */
-.es-hora-de-cambiar-section:nth-child(odd) {
-    flex-direction: row; /* Imagen a la izquierda, texto a la derecha */
-    /* background-color: #0A0A0A; Ya está definido en la regla base */
-}
-
-.es-hora-de-cambiar-section:nth-child(odd) .imagen-stack-derecha-cambiar {
-    margin-left: 50px; /* Mueve la primera imagen más a la derecha */
-    margin-right: 40px;
-}
-
-.es-hora-de-cambiar-section:nth-child(odd) .unica-imagen-rotacion {
-    transform: rotate(-3deg); /* Rota la primera imagen un poco a la izquierda */
-}
-
-.es-hora-de-cambiar-section:nth-child(odd) .texto-contenido-izquierda-cambiar {
-    padding-left: 40px;
-    padding-right: 0;
-    text-align: left;
-}
-
-.es-hora-de-cambiar-section:nth-child(even) {
-    flex-direction: row-reverse; /* Imagen a la derecha, texto a la izquierda */
-    text-align: left; /* Alinea el texto de la segunda imagen a la izquierda */
-    background-color: #ffffff; /* Aplica el color de fondo a la segunda sección */
-}
-
-.es-hora-de-cambiar-section:nth-child(even) .imagen-stack-derecha-cambiar {
-    margin-left: auto;
-    margin-right: 50px; /* Mueve la segunda imagen más a la izquierda */
-}
-
-.es-hora-de-cambiar-section:nth-child(even) .unica-imagen-rotacion {
-    transform: rotate(3deg); /* Rota la segunda imagen un poco a la derecha */
-}
-
-.es-hora-de-cambiar-section:nth-child(even) .texto-contenido-izquierda-cambiar {
-    padding-left: 40px; /* Ajusta el padding izquierdo para el texto de la segunda imagen */
-    padding-right: 0; /* Elimina el padding derecho para la alineación izquierda */
-    text-align: left; /* Asegura la alineación izquierda del texto de la segunda imagen */
+ /* Resaltar */
+.resaltar {
+  color: #f89c1c; /* Ejemplo: color naranja */
+  font-weight: bold; /* Ejemplo: texto en negrita */
 }
   </style>
 </head>
@@ -659,16 +495,10 @@ section {
 
 <section class="why-learnsy-background reveal">
   <div class="why-learnsy-section">
-    <div class="image-stack-left">
-      <div class="image-container-left image-bottom-left">
-        <img src="./Images/Image24.png" alt="Imagen 20" class="stacked-image-left">
-      </div>
-      <div class="image-container-left image-top-left">
-        <img src="./Images/Image22.png" alt="Imagen 21" class="stacked-image-left">
-      </div>
-    </div>
+    <img src="./Images/Image22.png" alt="Imagen 21" class="stacked-image-left imagen-sin-contenedor">
     <div class="text-content">
       <h2>¿Por Que Learnsy?</h2>
+
       <p>Porque no naciste para conformarte.<br> Por que este
         <span class="resaltar">Desafio</span> no es solo un aprendizaje, es una forja de <span class="resaltar">Mentalidad</span>.<br>Aquí no vienes a aprender lo que te enseñan todos, vienes a <span class="resaltar">Dominar</span> lo que nadie te enseña
         No buscamos estudiantes. Buscamos líderes, disruptores, visionarios.
@@ -677,12 +507,9 @@ section {
   </div>
 </section>
 
-  <!-- PILARES ZigZag -->
-   <div style="text-align: center; margin-top: 60px;">
-  <h2 class="pilares-title">Nuestros Pilares</h2>
-</div>
-
-
+<div style="text-align: center; margin-top: 60px;">
+    <h2 class="pilares-title">¿Que Ofrecemos?</h2>
+  </div>
   <section class="pilares-zigzag">
     <div class="pilar-card reverse">
       <div class="pilar-img">
@@ -714,7 +541,7 @@ section {
       </div>
     </div>
 
-    <div class="pilar-card">
+    <div class="pilar-card last-pilar">
       <div class="pilar-img">
         <img src="./Images/Image19.png" alt="Reinvéntate">
       </div>
@@ -748,74 +575,31 @@ section {
     </div>
 </section>
 
-<section class="cursos-section-learnsy reveal">
-    <h2 class="cursos-title-learnsy"><span class="linea-resaltada">Cursos Que Transforman</span></h2>
-    <div class="cursos-grid-learnsy">
-        <div class="curso-card-learnsy">
-            <div class="curso-imagen-container-learnsy">
-                <img src="./Images/Image8.png" alt="Curso de Enfoque">
-            </div>
-            <div class="curso-info-learnsy">
-                <h3>Curso de Enfoque</h3>
-                <p>Domina la concentración. Elimina distracciones. Multiplica tu productividad.</p>
-            </div>
-        </div>
-        <div class="curso-card-learnsy">
-            <div class="curso-imagen-container-learnsy">
-                <img src="./Images/Image9.png" alt="Finanzas para Jóvenes">
-            </div>
-            <div class="curso-info-learnsy">
-                <h3>Finanzas para Jóvenes</h3>
-                <p>Aprende a generar, gestionar e invertir dinero desde joven.</p>
-            </div>
-        </div>
-
-        <div class="curso-card-learnsy">
-            <div class="curso-imagen-container-learnsy">
-                <img src="./Images/Image12.png" alt="Mentalidad Ganadora">
-            </div>
-            <div class="curso-info-learnsy">
-                <h3>Mentalidad Ganadora</h3>
-                <p>Desarrolla hábitos y pensamientos de alto rendimiento.</p>
-            </div>
-        </div>
-    </div>
-</section>
 
 <section class="es-hora-de-cambiar-section">
-  <div class="imagen-stack-derecha-cambiar">
-    <div class="imagen-container-derecha-cambiar">
-      <img src="./Images/Image28.png" alt="Primera Imagen" class="imagen-apilada-derecha-cambiar unica-imagen-rotacion">
+    <div class="cambiar-container">
+      <div class="cambiar-text">
+        <h2>¿Estás Listo Para Cambiar?</h2>
+        <p>
+          Estás aquí porque algo dentro de ti ya no tolera la mediocridad.<br>
+          Porque sabes que tu potencial está siendo desperdiciado… y eso te está matando por dentro.<br>
+          Es hora de <span class="resaltar">Romper</span> con las excusas.<br>
+          Es hora de dejar de ser espectador y convertirte en <span class="resaltar">Protagonista</span><br>
+          No más días en piloto automático. No más rutinas vacías.<br>
+          Este es el punto de quiebre.<br>
+          Cambiar no es una opción.<br> 
+          Es una obligación contigo mismo.<br>
+        </p>
+      </div>
+      <div class="cambiar-image">
+        <img src="./Images/Image25.png" alt="¿Estás Listo Para Cambiar?">
+        <a href="#" class="cta-button cambiar-button">¡ESTOY LISTO CHAVAL!</a>
+      </div>
     </div>
-  </div>
-  <div class="texto-contenido-izquierda-cambiar">
-    <h2>Título de la Sección</h2>
-    <p>Aquí va el texto de tu primera sección "Es hora de cambiar".</p>
-    <a href="#" class="boton-cambiar">¡Tu Botón!</a>
-  </div>
-</section>
-
-<section class="es-hora-de-cambiar-section">
-  <div class="imagen-stack-derecha-cambiar">
-    <div class="imagen-container-derecha-cambiar">
-      <img src="./Images/Image25.png" alt="Segunda Imagen" class="imagen-apilada-derecha-cambiar unica-imagen-rotacion">
-    </div>
-  </div>
-  <div class="texto-contenido-izquierda-cambiar">
-    <h2>Otro Título</h2>
-    <p>Aquí va el texto de tu segunda sección "Es hora de cambiar".</p>
-    <a href="#" class="boton-cambiar">¡Otro Botón!</a>
-  </div>
-</section>
-
-
-  <div class="divider"></div>
-
-  <section class="container big-cta zoom-reveal">
-    <h2>Es hora de entrar en la forja</h2>
-    <p>Deja atrás la mediocridad. Entra en el entorno donde los adolescentes se convierten en leyendas.</p>
-    <a href="#" class="cta-button">¡QUIERO UNIRME!</a>
   </section>
+
+   <div class="divider"></div>
+
 
   <script src="./Learn.js"></script>
 </body>
