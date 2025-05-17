@@ -54,7 +54,7 @@ body {
     line-height: 1.2;
     text-transform: uppercase;
     margin-left: -80px;
-    margin-top: 80px;
+    margin-top: 30px;
 }
 
 .subtitle {
@@ -167,19 +167,16 @@ section {
 }
 
 /* NUEVA SECCIÓN ¿POR QUÉ LEARNSY? */
- 
-/* --- Sección ¿Por Qué Learnsy? (Solo rectángulo de fondo) --- */
+
 .why-learnsy-background {
   margin-top: 90px;
-  text-align: center;
-  padding: 100px 20px; /* Ajusta el padding para darle espacio al rectángulo */
-  background: #f8f8f8; /* Puedes mantener un color de fondo general si quieres */
+  text-align: left; /* Alineamos el texto a la izquierda por defecto */
+  padding: 80px 20px; /* Ajustamos el padding vertical */
+  background: #f8f8f8;
   border-radius: 16px;
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  position: relative; /* Necesario para posicionar el rectángulo */
-  overflow: hidden; /* Para que los bordes redondeados se vean bien */
 }
 
 .why-learnsy-background.active {
@@ -187,117 +184,164 @@ section {
   transform: translateY(0);
 }
 
-.fondo-con-bordes {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 400px; /* Ajusta el ancho del rectángulo */
-  height: 300px; /* Ajusta la altura del rectángulo */
-  background-color: #e0e0e0; /* El color del rectángulo */
-  border-radius: 30px; /* Ajusta el radio para redondear las esquinas */
-  transform: translate(-50%, -50%); /* Centra el rectángulo */
-  z-index: 0; /* Asegura que esté detrás de cualquier otro contenido futuro */
+.why-learnsy-section {
+  display: flex;
+  align-items: center; /* Centramos verticalmente la imagen y el texto */
+  justify-content: flex-start; /* Alineamos los elementos al inicio (izquierda) */
+  max-width: 1000px; /* Ancho máximo de la sección */
+  margin: 0 auto; /* Centramos la sección en pantallas grandes */
+  padding: 0 20px; /* Padding horizontal dentro de la sección */
 }
- 
+
+.image-container-left {
+  flex: 1; /* La imagen ocupa 1 parte del espacio flexible */
+  max-width: 45%; /* Ancho máximo del contenedor de la imagen */
+  margin-right: 40px; /* Espacio adicional a la derecha de la imagen */
+  transform: rotate(0deg) translateX(0px); /* Estado inicial sin efecto */
+  transition: transform 0.3s ease-out; /* Transición suave para el cambio */
+}
+
+/* Aplica el efecto solo cuando la clase 'active-on-scroll-down' está presente */
+.image-container-left.active-on-scroll-down {
+  transform: rotate(-5deg) translateX(-70px);
+}
+
+.learnsy-image {
+  width: 450px;
+  height: auto;
+  border-radius: 15px; /* Bordes redondeados para la imagen */
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.text-container-right {
+  flex: 1; /* El texto ocupa 1 parte del espacio flexible */
+  max-width: 100%; /* Ancho máximo del contenedor del texto */
+  text-align: left; /* Alineamos el texto a la izquierda dentro de su contenedor */
+}
+
+.main-title-learnsy {
+  color: #000;
+  font-weight: 800;
+  font-size: 3rem; /* Tamaño del título */
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  margin-top: -120px;
+}
+
+.subtitle-learnsy {
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  margin-top: 70px;
+}
 /* NUEVA SECCIÓN Pilares Zig Zag */
 
     .pilares-zigzag {
-      padding: 4rem 0;
-      background-color: #0A0A0A;
+        padding: 4rem 0;
+        background-color: #0A0A0A;
     }
     .pilares-title {
-      color:#00ff87;
+        color: #00ff87;
         font-weight: 800;
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-    line-height: 1.2;
-   }
+        font-size: 3em; /* Tamaño del título */
+        margin-bottom: 1rem;
+        line-height: 1.2;
+        /* Eliminamos los estilos de opacidad y transformación para el efecto directamente en el título */
+    }
+    .titulo-pilares-container {
+        text-align: center;
+        margin-top: 100px;
+        margin-bottom: 80px;
+        opacity: 0; /* Inicialmente transparente */
+        transform: translateY(-30px); /* Inicialmente desplazado 30 píxeles hacia arriba */
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transición suave */
+    }
+    .titulo-pilares-container.active {
+        opacity: 1; /* Se vuelve completamente visible */
+        transform: translateY(0); /* Vuelve a su posición original */
+    }
     .pilar-card {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 3rem;
-      margin-bottom: 17rem;
-      max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 3rem;
+        margin-bottom: 17rem;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 2rem;
     }
 
     .pilar-card.reverse {
-      flex-direction: row-reverse;
+        flex-direction: row-reverse;
     }
 
     .pilar-img {
-      flex: 1;
-      min-width: 300px;
+        flex: 1;
+        min-width: 300px;
     }
 
     .pilar-img img {
-      width: 100%;
-      max-width: 500px;
-      border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease;
+        width: 100%;
+        max-width: 500px;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
     }
 
     .pilar-img img:hover {
-      transform: scale(1.05);
+        transform: scale(1.05);
     }
 
     .pilar-text {
-      flex: 1;
-      color: white;
+        flex: 1;
+        color: white;
     }
 
     .pilar-text h3 {
-      color: #00ff87;
-          font-weight: 800;
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-    line-height: 1.2;
+        color: #00ff87;
+        font-weight: 800;
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+        line-height: 1.2;
     }
 
     .pilar-text p {
-      font-size: 1.1rem;
-      color: #CCCCCC;
-      line-height: 1.6;
+        font-size: 1.1rem;
+        color: #CCCCCC;
+        line-height: 1.6;
     }
 
     @media (max-width: 768px) {
-      .pilar-card, .pilar-card.reverse {
-        flex-direction: column;
-        gap: 1.5rem;
-      }
+        .pilar-card, .pilar-card.reverse {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
 
-      .pilar-img, .pilar-text {
-        width: 100%;
-      }
+        .pilar-img, .pilar-text {
+            width: 100%;
+        }
 
-      .pilar-text {
-        text-align: center;
-      }
+        .pilar-text {
+            text-align: center;
+        }
     }
 
-       /* Efecto de los Pilares */
+        /* Efecto de los Pilares */
 
-      .pilares-zigzag .pilar-card {
-     opacity: 0; /* Inicialmente transparentes */
-     transform: translateY(30px); /* Inicialmente desplazados 30 píxeles hacia abajo */
-     transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transición suave para opacidad y transformación */
-}
-      .pilares-zigzag .pilar-card.active {
-     opacity: 1; /* Vuelven a ser completamente visibles */
-     transform: translateY(0); /* Vuelven a su posición original */
+     .pilares-zigzag .pilar-card {
+        opacity: 0; /* Inicialmente transparentes */
+        transform: translateY(30px); /* Inicialmente desplazados 30 píxeles hacia abajo */
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transición suave para opacidad y transformación */
+    }
+     .pilares-zigzag .pilar-card.active {
+        opacity: 1; /* Vuelven a ser completamente visibles */
+        transform: translateY(0); /* Vuelven a su posición original */
+     }
      .pilares-zigzag .pilar-card.last-pilar {
-  margin-bottom: 20rem; /* Ajusta este valor al espacio que desees antes de la siguiente sección */
-
-  .pilares-zigzag .pilar-card.last-pilar {
-  margin-bottom: 2rem; /* Ajusta este valor al espacio que desees antes de la siguiente sección */
-}
-}
-}
-
+        margin-bottom: 2rem; /* Ajusta este valor al espacio que desees antes de la siguiente sección */
+     }
 /* NUEVA SECCIÓN Conoce a nuestro equipo */
 
      .equipo-section {
@@ -359,21 +403,14 @@ section {
   opacity: 1; /* Totalmente visible */
   transform: translateY(0); /* En su posición original */
 }
+
 /* --- Sección ¿Estás Listo Para Cambiar? --- */
+
 .es-hora-de-cambiar-section {
   background-color: #0A0A0A; /* Un fondo oscuro para contrastar */
   padding: 4rem 0;
   color: white;
-  opacity: 0; /* Inicialmente invisible */
-  transform: translateX(50px); /* Inicialmente un poco a la derecha */
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transición suave */
 }
-
-.es-hora-de-cambiar-section.active {
-  opacity: 1; /* Totalmente visible */
-  transform: translateX(0); /* En su posición original */
-}
-
 .cambiar-container {
   display: flex;
   justify-content: space-between; /* Texto a la izquierda, imagen a la derecha */
@@ -383,12 +420,10 @@ section {
   padding: 0 2rem;
   gap: 2rem; /* Espacio entre texto e imagen */
 }
-
 .cambiar-text {
   flex: 1; /* El texto ocupa la mayor parte del espacio disponible */
   text-align: left;
 }
-
 .cambiar-text h2 {
     font-weight: 800;
     font-size: 2.2rem;
@@ -398,30 +433,38 @@ section {
     margin-left: 4px;
     margin-top: 10px
 }
-
-
 .cambiar-text p {
   color: #CCCCCC;
   font-size: 1.1rem;
   line-height: 1.6;
   margin-top: 4rem;
 }
-
 .cambiar-image {
   flex: 1; /* La imagen ocupa la otra parte del espacio */
-  text-align: center; /* Centrar la imagen y el botón */
+  text-align: left; /* Alineamos el contenido a la izquierda dentro del contenedor */
+  opacity: 0; /* Inicialmente invisible */
+  transform: translateX(50px); /* Inicialmente un poco a la derecha */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transición suave solo para la imagen */
+  display: flex; /* Usamos flexbox para alinear la imagen y el botón */
+  flex-direction: column; /* Colocamos la imagen y el botón en columna */
+  align-items: flex-start; /* Alineamos los elementos a la izquierda */
+}
+
+.es-hora-de-cambiar-section.active .cambiar-image {
+  opacity: 1; /* Se vuelve totalmente visible cuando la sección está activa */
+  transform: translateX(0); /* Vuelve a su posición original cuando la sección está activa */
 }
 
 .cambiar-image img {
   max-width: 85%; /* La imagen no excederá su contenedor */
   height: auto;
   border-radius: 8px;
-  margin-bottom: 0rem; /* Espacio entre la imagen y el botón */
+  margin-bottom: 1rem; /* MODIFICADO: Añadimos un margen inferior para separar la imagen del botón */
   margin-top: 7rem; /* MODIFICADO: Añadimos un margen superior */
 }
 
 .cambiar-button {
-  background-color: #f89c1c; /* Un color diferente para este botón */
+  background-color: #00ff87; /* Un color diferente para este botón */
   color: #000;
   border-radius: 6px;
   padding: 0.8rem 2rem;
@@ -433,12 +476,7 @@ section {
   text-transform: uppercase;
   text-decoration: none;
   display: inline-block;
-  margin-top: 3rem;
-}
-
-.cambiar-button:hover {
-  background-color: #e08a0e;
-  transform: scale(1.05);
+  /* El margen superior se mantiene para separarlo de la imagen */
 }
 
 /* Media query para pantallas más pequeñas (invertir el orden) */
@@ -454,10 +492,11 @@ section {
   }
 
   .cambiar-image {
-    text-align: center;
+    text-align: center; /* Centramos el contenido en pantallas pequeñas */
+    align-items: center; /* Centramos los elementos hijos */
   }
-  /* Divider */
 }
+  /* Divider */
 .divider {
   border-top: 1px solid #00ff87 ;
   margin: 3rem auto;
@@ -479,9 +518,10 @@ section {
     <div class="columns">
       <div class="column">
         <h1 class="main-title">FORJANDO LEYENDAS DESDE LA AMBICIÓN ADOLESCENTE</h1>
-        <p class="subtitle">No es una escuela. Es una forja.
-          Aquí los chavales con hambre de grandeza se convierten en máquinas de disciplina, visión y acción.
-          Cursos, retos y herramientas para romper el ciclo y construir tu mejor versión</p>
+        <p class="subtitle"><br>Esto no es una escuela, es un centro de evolucion.
+          
+          <br>Aquí los chavales con hambre de grandeza se convierten en máquinas de disciplina, visión y acción.
+          <br>Cursos, retos y herramientas para romper el ciclo y construir tu mejor versión</p>
         <a href="#" class="cta-button">¡QUIERO UNIRME!</a>
       </div>
       <div class="column reveal">
@@ -495,62 +535,64 @@ section {
 
 <section class="why-learnsy-background reveal">
   <div class="why-learnsy-section">
-    <img src="./Images/Image22.png" alt="Imagen 21" class="stacked-image-left imagen-sin-contenedor">
-    <div class="text-content">
-      <h2>¿Por Que Learnsy?</h2>
-
-      <p>Porque no naciste para conformarte.<br> Por que este
-        <span class="resaltar">Desafio</span> no es solo un aprendizaje, es una forja de <span class="resaltar">Mentalidad</span>.<br>Aquí no vienes a aprender lo que te enseñan todos, vienes a <span class="resaltar">Dominar</span> lo que nadie te enseña
-        No buscamos estudiantes. Buscamos líderes, disruptores, visionarios.
-      </p>
+    <div class="image-container-left">
+      <img src="./Images/Image22.png" alt="Imagen de Learnsy" class="learnsy-image">
+    </div>
+    <div class="text-container-right">
+      <h2 class="main-title-learnsy">¿Por Que Learnsy?</h2>
+      <p class="subtitle-learnsy">Porque no naciste para conformarte.<br>
+        Por que este <span class="resaltar">Desafío</span> no es solo un aprendizaje, es un despertar Mental.<br>
+        Aquí no vienes a aprender lo que todos te enseñan, vienes a <span class="resaltar">Dominar</span> lo que nadie te enseña.<br>
+       Aquí crecen líderes que <span class="resaltar">Rompen</span> esquemas, que no se detienen hasta conquistar su destino.<br>
+       Porque quien entra aquí, no vuelve a salir igual. Sale más fuerte, más claro, más despierto.</p><br>
     </div>
   </div>
 </section>
 
-<div style="text-align: center; margin-top: 60px;">
-    <h2 class="pilares-title">¿Que Ofrecemos?</h2>
+ <div class="titulo-pilares-container">
+  <h2 class="pilares-title">¿Que Ofrecemos?</h2>
+</div>
+<section class="pilares-zigzag">
+  <div class="pilar-card reverse">
+    <div class="pilar-img">
+      <img src="./Images/Image5.png" alt="Disciplina Nuclear">
+    </div>
+    <div class="pilar-text">
+      <h3>Disciplina Nuclear</h3>
+      <p>Instala una disciplina brutal y no negociable. Tu palabra es ley. Sin excusas.</p>
+    </div>
   </div>
-  <section class="pilares-zigzag">
-    <div class="pilar-card reverse">
-      <div class="pilar-img">
-        <img src="./Images/Image5.png" alt="Disciplina Nuclear">
-      </div>
-      <div class="pilar-text">
-        <h3>Disciplina Nuclear</h3>
-        <p>Instala una disciplina brutal y no negociable. Tu palabra es ley. Sin excusas.</p>
-      </div>
-    </div>
 
-    <div class="pilar-card">
-      <div class="pilar-img">
-        <img src="./Images/Image6.png" alt="Mentalidad de Hierro">
-      </div>
-      <div class="pilar-text">
-        <h3>Mentalidad de Hierro</h3>
-        <p>Forja una mente inquebrantable. Reprograma tus pensamientos para resistir cualquier tormenta.</p>
-      </div>
+  <div class="pilar-card">
+    <div class="pilar-img">
+      <img src="./Images/Image6.png" alt="Mentalidad de Hierro">
     </div>
+    <div class="pilar-text">
+      <h3>Mentalidad de Hierro</h3>
+      <p>Forja una mente inquebrantable. Reprograma tus pensamientos para resistir cualquier tormenta.</p>
+    </div>
+  </div>
 
-    <div class="pilar-card reverse">
-      <div class="pilar-img">
-        <img src="./Images/Image7.png" alt="Modo Monje">
-      </div>
-      <div class="pilar-text">
-        <h3>Modo Monje</h3>
-        <p>Silencio. Enfoque. Sacrificio. Entra en aislamiento productivo y alcanza tu máximo potencial.</p>
-      </div>
+  <div class="pilar-card reverse">
+    <div class="pilar-img">
+      <img src="./Images/Image7.png" alt="Modo Monje">
     </div>
+    <div class="pilar-text">
+      <h3>Modo Monje</h3>
+      <p>Silencio. Enfoque. Sacrificio. Entra en aislamiento productivo y alcanza tu máximo potencial.</p>
+    </div>
+  </div>
 
-    <div class="pilar-card last-pilar">
-      <div class="pilar-img">
-        <img src="./Images/Image19.png" alt="Reinvéntate">
-      </div>
-      <div class="pilar-text">
-        <h3>Reinvéntate</h3>
-        <p>Rompe con el pasado, redefine tu identidad y construye una nueva versión de ti mismo desde cero.</p>
-      </div>
+  <div class="pilar-card last-pilar">
+    <div class="pilar-img">
+      <img src="./Images/Image19.png" alt="Reinvéntate">
     </div>
-  </section>
+    <div class="pilar-text">
+      <h3>Reinvéntate</h3>
+      <p>Rompe con el pasado, redefine tu identidad y construye una nueva versión de ti mismo desde cero.</p>
+    </div>
+  </div>
+</section>
 
   <!-- Conoce a nuestro equipo -->
 <section class="equipo-section reveal">
