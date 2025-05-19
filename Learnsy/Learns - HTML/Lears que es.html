@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Vales para ser un Héroe?</title>
+  <link rel="stylesheet" href="/Learnsy/Learns - CSS/Learns2.CSS">
+</head>
+<body>
+  <div class="hero-recruitment-container">
+    <div class="hero-intro" id="intro-section">
+      <h1>¿Vales Para Entrar A Learnsy?</h1>
+      <p class="hero-description">Esta inscripción es solo para aquellos jóvenes que están interesados en convertirse en un Héroe para dominar todos los aspectos de la vida y alcanzar tu mejor versión. Responde las siguientes preguntas para saber si cumples con los requisitos de la Academia</p>
+    <div class="hero-image-container">
+        <img src="/Learnsy/Images/Image37.png" alt="Imagen de Heroe">
+    </div>
+      <button class="hero-action-button" id="start-quiz">Estoy listo →</button>
+    </div>
+
+    <div class="hero-quiz-container" id="quiz-section" style="display: none;">
+      <div class="hero-progress-bar-container">
+        <div class="hero-progress-bar"></div>
+      </div>
+
+      <div class="hero-question-container" id="pregunta-1">
+        <h2 class="hero-question-text">Pregunta 1: ¿Estás harto del sistema?</h2>
+        <div class="hero-options">
+          <button class="hero-option-button" data-respuesta="si">Sí, ¡a rabiar!</button>
+          <button class="hero-option-button" data-respuesta="no">No, me encanta.</button>
+        </div>
+        <button class="hero-next-button" data-next="pregunta-2">Siguiente</button>
+      </div>
+
+      <div class="hero-question-container" id="pregunta-2" style="display: none;">
+        <h2 class="hero-question-text">Pregunta 2: ¿Quieres romper el molde?</h2>
+        <div class="hero-options">
+          <button class="hero-option-button" data-respuesta="definitivamente">¡Absolutamente!</button>
+          <button class="hero-option-button" data-respuesta="quizas">Quizás, depende del molde.</button>
+        </div>
+        <button class="hero-next-button" data-next="pregunta-3">Siguiente</button>
+      </div>
+
+      <div class="hero-question-container" id="pregunta-3" style="display: none;">
+        <h2 class="hero-question-text">Pregunta 3: ¿Tienes hambre de más?</h2>
+        <div class="hero-options">
+          <button class="hero-option-button" data-respuesta="siempre">¡Siempre!</button>
+          <button class="hero-option-button" data-respuesta="aveces">A veces.</button>
+        </div>
+        <button class="hero-next-button" data-next="final" id="boton-final">Siguiente</button>
+      </div>
+
+      <div class="hero-final-message" id="final" style="display: none;">
+        <h2>¡Bienvenido a la trinchera!</h2>
+        <p>Has demostrado tener lo necesario.</p>
+        <button class="hero-action-button">Activar mi Despertar →</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/Learnsy/Learns - Java/Learn2.js"></script>
+</body>
+</html>

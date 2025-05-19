@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Learnsy - Transformación Educativa</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
-    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <style>
-    * /* --- Estilos Generales --- */
+/* --- Estilos Generales --- */
 * {
     margin: 0;
     padding: 0;
@@ -197,14 +186,15 @@ section {
   flex: 1; /* La imagen ocupa 1 parte del espacio flexible */
   max-width: 45%; /* Ancho máximo del contenedor de la imagen */
   margin-right: 40px; /* Espacio adicional a la derecha de la imagen */
-  transform: rotate(0deg) translateX(0px); /* Estado inicial sin efecto */
-  transition: transform 0.3s ease-out; /* Transición suave para el cambio */
+  /* Aplicamos la transformación directamente */
+  transform: rotate(-5deg) translateX(-70px);
+  transition: transform 0.8s ease-out; /* Transición para el efecto inicial */
 }
 
-/* Aplica el efecto solo cuando la clase 'active-on-scroll-down' está presente */
-.image-container-left.active-on-scroll-down {
+/* ELIMINAMOS esta regla, ya no la necesitamos */
+/* .image-container-left.active-on-scroll-down {
   transform: rotate(-5deg) translateX(-70px);
-}
+} */
 
 .learnsy-image {
   width: 450px;
@@ -222,10 +212,10 @@ section {
 .main-title-learnsy {
   color: #000;
   font-weight: 800;
-  font-size: 3rem; /* Tamaño del título */
+  font-size: 4rem; /* Tamaño del título */
   margin-bottom: 1rem;
   line-height: 1.2;
-  margin-top: -120px;
+  margin-top: 10px;
 }
 
 .subtitle-learnsy {
@@ -411,6 +401,7 @@ section {
   padding: 4rem 0;
   color: white;
 }
+
 .cambiar-container {
   display: flex;
   justify-content: space-between; /* Texto a la izquierda, imagen a la derecha */
@@ -420,10 +411,12 @@ section {
   padding: 0 2rem;
   gap: 2rem; /* Espacio entre texto e imagen */
 }
+
 .cambiar-text {
   flex: 1; /* El texto ocupa la mayor parte del espacio disponible */
   text-align: left;
 }
+
 .cambiar-text h2 {
     font-weight: 800;
     font-size: 2.2rem;
@@ -433,12 +426,14 @@ section {
     margin-left: 4px;
     margin-top: 10px
 }
+
 .cambiar-text p {
   color: #CCCCCC;
   font-size: 1.1rem;
   line-height: 1.6;
   margin-top: 4rem;
 }
+
 .cambiar-image {
   flex: 1; /* La imagen ocupa la otra parte del espacio */
   text-align: left; /* Alineamos el contenido a la izquierda dentro del contenedor */
@@ -447,7 +442,7 @@ section {
   transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transición suave solo para la imagen */
   display: flex; /* Usamos flexbox para alinear la imagen y el botón */
   flex-direction: column; /* Colocamos la imagen y el botón en columna */
-  align-items: flex-start; /* Alineamos los elementos a la izquierda */
+  align-items: flex-end; /* MODIFICADO: Alineamos los elementos a la derecha */
 }
 
 .es-hora-de-cambiar-section.active .cambiar-image {
@@ -476,6 +471,9 @@ section {
   text-transform: uppercase;
   text-decoration: none;
   display: inline-block;
+  margin-top: 3rem;
+  margin-left: 10px;
+  margin-right: 109px;
   /* El margen superior se mantiene para separarlo de la imagen */
 }
 
@@ -507,142 +505,3 @@ section {
   color: #f89c1c; /* Ejemplo: color naranja */
   font-weight: bold; /* Ejemplo: texto en negrita */
 }
-  </style>
-</head>
-<body>
-<div class="container">
-    <div class="header">
-      <div class="logo">LEARNSY</div>
-    </div>
-
-    <div class="columns">
-      <div class="column">
-        <h1 class="main-title">FORJANDO LEYENDAS DESDE LA AMBICIÓN ADOLESCENTE</h1>
-        <p class="subtitle"><br>Esto no es una escuela, es un centro de evolucion.
-          
-          <br>Aquí los chavales con hambre de grandeza se convierten en máquinas de disciplina, visión y acción.
-          <br>Cursos, retos y herramientas para romper el ciclo y construir tu mejor versión</p>
-        <a href="#" class="cta-button">¡QUIERO UNIRME!</a>
-      </div>
-      <div class="column reveal">
-        <div class="image-container">
-          <img src="./Images/Image3.png" class="main-image" alt="Imagen principal">
-          <img src="./Images/Image2.png" class="overlay-image" alt="Imagen secundaria">
-        </div>
-      </div>
-    </div>
-  </div>
-
-<section class="why-learnsy-background reveal">
-  <div class="why-learnsy-section">
-    <div class="image-container-left">
-      <img src="./Images/Image22.png" alt="Imagen de Learnsy" class="learnsy-image">
-    </div>
-    <div class="text-container-right">
-      <h2 class="main-title-learnsy">¿Por Que Learnsy?</h2>
-      <p class="subtitle-learnsy">Porque no naciste para conformarte.<br>
-        Por que este <span class="resaltar">Desafío</span> no es solo un aprendizaje, es un despertar Mental.<br>
-        Aquí no vienes a aprender lo que todos te enseñan, vienes a <span class="resaltar">Dominar</span> lo que nadie te enseña.<br>
-       Aquí crecen líderes que <span class="resaltar">Rompen</span> esquemas, que no se detienen hasta conquistar su destino.<br>
-       Porque quien entra aquí, no vuelve a salir igual. Sale más fuerte, más claro, más despierto.</p><br>
-    </div>
-  </div>
-</section>
-
- <div class="titulo-pilares-container">
-  <h2 class="pilares-title">¿Que Ofrecemos?</h2>
-</div>
-<section class="pilares-zigzag">
-  <div class="pilar-card reverse">
-    <div class="pilar-img">
-      <img src="./Images/Image5.png" alt="Disciplina Nuclear">
-    </div>
-    <div class="pilar-text">
-      <h3>Disciplina Nuclear</h3>
-      <p>Instala una disciplina brutal y no negociable. Tu palabra es ley. Sin excusas.</p>
-    </div>
-  </div>
-
-  <div class="pilar-card">
-    <div class="pilar-img">
-      <img src="./Images/Image6.png" alt="Mentalidad de Hierro">
-    </div>
-    <div class="pilar-text">
-      <h3>Mentalidad de Hierro</h3>
-      <p>Forja una mente inquebrantable. Reprograma tus pensamientos para resistir cualquier tormenta.</p>
-    </div>
-  </div>
-
-  <div class="pilar-card reverse">
-    <div class="pilar-img">
-      <img src="./Images/Image7.png" alt="Modo Monje">
-    </div>
-    <div class="pilar-text">
-      <h3>Modo Monje</h3>
-      <p>Silencio. Enfoque. Sacrificio. Entra en aislamiento productivo y alcanza tu máximo potencial.</p>
-    </div>
-  </div>
-
-  <div class="pilar-card last-pilar">
-    <div class="pilar-img">
-      <img src="./Images/Image19.png" alt="Reinvéntate">
-    </div>
-    <div class="pilar-text">
-      <h3>Reinvéntate</h3>
-      <p>Rompe con el pasado, redefine tu identidad y construye una nueva versión de ti mismo desde cero.</p>
-    </div>
-  </div>
-</section>
-
-  <!-- Conoce a nuestro equipo -->
-<section class="equipo-section reveal">
-    <h2 class="equipo-title">Conoce a nuestro equipo</h2>
-    <div class="equipo-gallery">
-        <div class="equipo-item">
-            <img src="./Images/Image16.png" alt="Potencia tu Futuro">
-            <div class="equipo-text">Transformamos tu hambre de éxito en resultados reales</div>
-        </div>
-        <div class="equipo-item">
-            <img src="./Images/Image17.png" alt="Comunidad de Hermanos">
-            <div class="equipo-text">No estás solo. Aquí creces con una tribu que piensa como tú</div>
-        </div>
-        <div class="equipo-item">
-            <img src="./Images/Image18.png" alt="Puro Movimiento">
-            <div class="equipo-text">Nada de bla bla. Solo herramientas, retos y acción sin pausa</div>
-        </div>
-        <div class="equipo-item">
-            <img src="./Images/Image26.png" alt="Elite Only">
-            <div class="equipo-text">Aquí solo crecen los mejores, nada de SIMPS</div>
-        </div>
-    </div>
-</section>
-
-
-<section class="es-hora-de-cambiar-section">
-    <div class="cambiar-container">
-      <div class="cambiar-text">
-        <h2>¿Estás Listo Para Cambiar?</h2>
-        <p>
-          Estás aquí porque algo dentro de ti ya no tolera la mediocridad.<br>
-          Porque sabes que tu potencial está siendo desperdiciado… y eso te está matando por dentro.<br>
-          Es hora de <span class="resaltar">Romper</span> con las excusas.<br>
-          Es hora de dejar de ser espectador y convertirte en <span class="resaltar">Protagonista</span><br>
-          No más días en piloto automático. No más rutinas vacías.<br>
-          Este es el punto de quiebre.<br>
-          Cambiar no es una opción.<br> 
-          Es una obligación contigo mismo.<br>
-        </p>
-      </div>
-      <div class="cambiar-image">
-        <img src="./Images/Image25.png" alt="¿Estás Listo Para Cambiar?">
-        <a href="#" class="cta-button cambiar-button">¡ESTOY LISTO CHAVAL!</a>
-      </div>
-    </div>
-  </section>
-
-   <div class="divider"></div>
-
-
-  <script src="./Learn.js"></script>
-</body>
-</html>

@@ -45,14 +45,15 @@ function handleScrollReveal() {
     }
   }
 
-  // Lógica específica para la imagen de Why Learnsy (solo añadir la clase al bajar)
+  // Lógica específica para la imagen de Why Learnsy (añadir y remover la clase)
   if (whyLearnsyBackground && learnsyImageContainer) {
     const rectWhyLearnsy = whyLearnsyBackground.getBoundingClientRect();
     const windowHeight = window.innerHeight;
 
-    // Añade la clase solo si la sección entra en la vista desde abajo
-    if (rectWhyLearnsy.top < windowHeight * 0.85 && !learnsyImageContainer.classList.contains('active-on-scroll-down')) {
+    if (rectWhyLearnsy.top < windowHeight * 0.85 && rectWhyLearnsy.bottom > windowHeight * 0.15) {
       learnsyImageContainer.classList.add('active-on-scroll-down');
+    } else {
+      learnsyImageContainer.classList.remove('active-on-scroll-down');
     }
   }
 }
