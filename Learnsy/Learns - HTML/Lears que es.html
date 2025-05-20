@@ -7,46 +7,102 @@
   <link rel="stylesheet" href="/Learnsy/Learns - CSS/Learns2.CSS">
 </head>
 <body>
-  <div class="hero-recruitment-container">
-    <div class="hero-intro" id="intro-section">
-      <h1>¿Vales Para Entrar A Learnsy?</h1>
-      <p class="hero-description">Esta inscripción es solo para aquellos jóvenes que están interesados en convertirse en un Héroe para dominar todos los aspectos de la vida y alcanzar tu mejor versión. Responde las siguientes preguntas para saber si cumples con los requisitos de la Academia</p>
-    <div class="hero-image-container">
-        <img src="/Learnsy/Images/Image37.png" alt="Imagen de Heroe">
-    </div>
-      <button class="hero-action-button" id="start-quiz">Estoy listo →</button>
-    </div>
+  <div class="hero-recruitment-container">
+    <div class="hero-intro" id="intro-section">
+      <h1>No buscamos gente común ¿Encajas tú?</h1>
+     <div class="hero-image-container">
+        <img src="/Learnsy/Images/Image37.png" alt="Imagen representativa de la inscripción de héroes">
+     </div>
+     <blockquote class="hero-quote">
+     Muchos entrarán a aprender, pero pocos decidirán vivir lo aprendido.
+</blockquote>
+     <p class="hero-description">Esto no es para cualquiera, solo los que tienen hambre de más, 
+      si estás listo para tomar el control, romper tus límites y convertirte en tu mejor versión, 
+      entonces demuestra que tienes lo necesario. Responde estas preguntas. 
+      No son un filtro, son tu primer reto. Porque en Learnsy, no entra el que quiere. Entra el que está listo.</p>
+      <button class="hero-action-button" id="start-quiz">Estoy listo →</button>
+    </div>
 
     <div class="hero-quiz-container" id="quiz-section" style="display: none;">
-      <div class="hero-progress-bar-container">
-        <div class="hero-progress-bar"></div>
-      </div>
 
-      <div class="hero-question-container" id="pregunta-1">
+      <div class="hero-question-container active" id="pregunta-1">
         <h2 class="hero-question-text">Pregunta 1: ¿Estás harto del sistema?</h2>
         <div class="hero-options">
           <button class="hero-option-button" data-respuesta="si">Sí, ¡a rabiar!</button>
           <button class="hero-option-button" data-respuesta="no">No, me encanta.</button>
         </div>
-        <button class="hero-next-button" data-next="pregunta-2">Siguiente</button>
       </div>
 
-      <div class="hero-question-container" id="pregunta-2" style="display: none;">
+      <div class="hero-question-container" id="pregunta-2" id="pregunta-2">
         <h2 class="hero-question-text">Pregunta 2: ¿Quieres romper el molde?</h2>
         <div class="hero-options">
           <button class="hero-option-button" data-respuesta="definitivamente">¡Absolutamente!</button>
           <button class="hero-option-button" data-respuesta="quizas">Quizás, depende del molde.</button>
         </div>
-        <button class="hero-next-button" data-next="pregunta-3">Siguiente</button>
       </div>
 
-      <div class="hero-question-container" id="pregunta-3" style="display: none;">
+      <div class="hero-question-container" id="pregunta-3">
         <h2 class="hero-question-text">Pregunta 3: ¿Tienes hambre de más?</h2>
         <div class="hero-options">
           <button class="hero-option-button" data-respuesta="siempre">¡Siempre!</button>
           <button class="hero-option-button" data-respuesta="aveces">A veces.</button>
         </div>
-        <button class="hero-next-button" data-next="final" id="boton-final">Siguiente</button>
+      </div>
+
+      <div class="hero-question-container" id="pregunta-4">
+        <h2 class="hero-question-text">Pregunta 4: ¿Te consideras una persona resiliente?</h2>
+        <div class="hero-options">
+          <button class="hero-option-button" data-respuesta="si">¡Por supuesto!</button>
+          <button class="hero-option-button" data-respuesta="talvez">Tal vez, en algunas situaciones.</button>
+        </div>
+      </div>
+
+      <div class="hero-question-container" id="pregunta-5">
+        <h2 class="hero-question-text">Pregunta 5: ¿Buscas constantemente mejorar?</h2>
+        <div class="hero-options">
+          <button class="hero-option-button" data-respuesta="si">Sí, es mi motor.</button>
+          <button class="hero-option-button" data-respuesta="no">Estoy conforme con lo que sé.</button>
+        </div>
+      </div>
+
+      <div class="hero-question-container" id="pregunta-6">
+        <h2 class="hero-question-text">Pregunta 6: ¿Te adaptas fácilmente a los cambios?</h2>
+        <div class="hero-options">
+          <button class="hero-option-button" data-respuesta="si">Como el agua.</button>
+          <button class="hero-option-button" data-respuesta="no">Prefiero la estabilidad.</button>
+        </div>
+      </div>
+
+      <div class="hero-question-container" id="pregunta-7">
+        <h2 class="hero-question-text">Pregunta 7: ¿Te atraen los desafíos complejos?</h2>
+        <div class="hero-options">
+          <button class="hero-option-button" data-respuesta="si">¡Son mi especialidad!</button>
+          <button class="hero-option-button" data-respuesta="no">Los evito si es posible.</button>
+        </div>
+      </div>
+
+      <div class="hero-question-container" id="pregunta-8">
+        <h2 class="hero-question-text">Pregunta 8: ¿Crees en el trabajo en equipo?</h2>
+        <div class="hero-options">
+          <button class="hero-option-button" data-respuesta="si">Es fundamental.</button>
+          <button class="hero-option-button" data-respuesta="no">Prefiero trabajar solo.</button>
+        </div>
+      </div>
+
+      <div class="hero-question-container" id="pregunta-9">
+        <h2 class="hero-question-text">Pregunta 9: ¿Estás dispuesto a aprender de tus errores?</h2>
+        <div class="hero-options">
+          <button class="hero-option-button" data-respuesta="si">Es la mejor forma de crecer.</button>
+          <button class="hero-option-button" data-respuesta="no">Me frustran mucho.</button>
+        </div>
+      </div>
+
+      <div class="hero-question-container" id="pregunta-10">
+        <h2 class="hero-question-text">Pregunta 10: ¿Te consideras una persona con determinación?</h2>
+        <div class="hero-options">
+          <button class="hero-option-button" data-respuesta="si">¡Nada me detiene!</button>
+          <button class="hero-option-button" data-respuesta="no">A veces me rindo fácilmente.</button>
+        </div>
       </div>
 
       <div class="hero-final-message" id="final" style="display: none;">
@@ -54,6 +110,11 @@
         <p>Has demostrado tener lo necesario.</p>
         <button class="hero-action-button">Activar mi Despertar →</button>
       </div>
+
+      <div class="hero-progress-bar-container bottom">
+        <div class="hero-progress-bar"></div>
+      </div>
+
     </div>
   </div>
 
