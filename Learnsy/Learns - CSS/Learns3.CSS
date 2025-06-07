@@ -1,0 +1,231 @@
+/* --- ESTILOS GENERALES Y RESETS --- */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; 
+    font-family: 'Arial', sans-serif; /* Usa tu fuente preferida */
+    background-color: #000; 
+    color: #fff; 
+    overflow: hidden; 
+}
+
+/* --- CONTENEDOR PRINCIPAL DE PANTALLA DIVIDIDA --- */
+.split-screen-container {
+    display: flex; 
+    height: 100vh; 
+    width: 100vw; 
+    background-color: #000; 
+}
+
+/* --- PANEL IZQUIERDO (UNA SOLA IMAGEN DE COMPOSICIÓN) --- */
+.left-panel {
+    flex: 2; /* Ocupa la mitad del espacio horizontal */
+    position: relative; /* Para que la imagen dentro se posicione correctamente */
+    background-color: #000; /* Fondo negro si la imagen no carga */
+    overflow: hidden; /* Asegura que la imagen no se desborde */
+    display: flex; /* Para centrar la imagen si es necesario */
+    justify-content: center;
+    align-items: center;
+}
+
+.left-panel-image {
+    width: 100%; /* La imagen cubre el 100% del ancho del panel */
+    height: 100%; /* La imagen cubre el 100% de la altura del panel */
+    object-fit: cover; /* Cubre todo el espacio sin distorsionar, recortando si es necesario */
+    
+    display: block; /* Elimina espacio extra debajo de la imagen */
+}
+
+/* --- PANEL DERECHO (FORMULARIO DE INICIO DE SESIÓN) --- */
+.right-panel {
+    flex: 0.8; /* Ocupa 1 parte del espacio (ej. 33.33%) */
+    background-color: #1a1a1a; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 20px;
+
+}
+
+/* --- Estilos del encabezado de login --- */
+.login-header {
+    text-align: center; 
+    margin-bottom: 40px; 
+}
+
+.lightning-icon {
+    width: 50px; 
+    height: auto;
+    margin-bottom: 15px;
+    /*filter: invert(1) brightness(2); /* Descomenta si tu icono es oscuro y quieres que se vea blanco */
+}
+
+.login-main-title {
+    font-size: 2.5em; 
+    color: #fff; 
+    margin: 0; 
+    padding: 0; 
+}
+
+/* --- Estilos para los botones de login social --- */
+.social-login-buttons {
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px; 
+    width: 80%; 
+    max-width: 350px; 
+    margin-bottom: 30px;
+}
+
+.social-button {
+    background-color: #ffffff; /* CAMBIO AQUÍ: Fondo blanco para los botones sociales */
+    color: #333; /* CAMBIO AQUÍ: Texto oscuro para contraste en fondo blanco */
+    padding: 15px 20px; 
+    border: none; 
+    border-radius: 8px; 
+    font-size: 1.1em; 
+    cursor: pointer; 
+    display: flex; 
+    align-items: center; 
+    justify-content: flex-start; 
+    gap: 15px; 
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease; /* Añadida transición para el color del texto */
+}
+
+.social-button:hover {
+    background-color: #f0f0f0; /* CAMBIO AQUÍ: Un blanco ligeramente más oscuro al pasar el mouse */
+    transform: translateY(-2px); 
+}
+
+.button-icon {
+    width: 24px; 
+    height: 24px;
+    /* Si tus iconos son claros y no se ven bien sobre fondo blanco, puedes probar con un filtro como este: */
+    /* filter: invert(0.2); */ 
+}
+
+/* --- Estilos para el Formulario de Email/Contraseña (inicialmente oculto) --- */
+.email-login-form {
+    display: none; 
+    flex-direction: column; 
+    gap: 20px; 
+    width: 80%; 
+    max-width: 350px; 
+    margin-top: 20px; 
+}
+
+.email-login-form.active {
+    display: flex; 
+}
+
+.form-group {
+    text-align: left; 
+}
+
+.form-label {
+    display: block; 
+    margin-bottom: 8px; 
+    color: #bbb; 
+    font-size: 0.95em; 
+}
+
+.form-input {
+    width: 100%; 
+    padding: 12px 15px; 
+    border: 1px solid #555; 
+    border-radius: 8px; 
+    background-color: #2a2a2a; 
+    color: #fff; 
+    font-size: 1em; 
+    box-sizing: border-box; 
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.form-input::placeholder {
+    color: #888; 
+}
+
+.form-input:focus {
+    outline: none; 
+    border-color: #00ff00; 
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.4); 
+}
+
+/* Estilo para el botón de "Iniciar Sesión" dentro del formulario de email */
+.login-button {
+    background-color: #ff8c00; 
+    color: #fff; 
+    padding: 15px 25px; 
+    border: none; 
+    border-radius: 8px; 
+    font-size: 1.1em; 
+    font-weight: bold; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; 
+    margin-top: 15px; 
+    width: 100%; 
+}
+
+.login-button:hover {
+    background-color: #ff6600; 
+    transform: translateY(-2px); 
+    box-shadow: 0 5px 15px rgba(255, 140, 0, 0.4); 
+}
+
+/* --- Estilos para enlaces de formulario (registro, olvidé contraseña) --- */
+.form-link {
+    font-size: 0.9em; 
+    margin-top: 20px; 
+    color: #ccc; 
+    text-align: center; 
+}
+
+.form-link a {
+    color: #00ff00; 
+    text-decoration: none; 
+    font-weight: bold; 
+    transition: color 0.3s ease; 
+}
+
+.form-link a:hover {
+    color: #00ffff; 
+    text-decoration: underline; 
+}
+
+/* --- RESPONSIVIDAD (Media Queries para pantallas pequeñas) --- */
+@media (max-width: 768px) {
+    .split-screen-container {
+        flex-direction: column; 
+    }
+
+    .left-panel {
+        height: 250px; /* Altura fija para el panel de la imagen en dispositivos móviles */
+        flex: none; 
+    }
+    
+    .left-panel-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .right-panel {
+        flex: 1; 
+        padding: 30px 20px; 
+    }
+
+    .login-header {
+        margin-bottom: 20px; 
+    }
+
+    .login-main-title {
+        font-size: 2em; 
+    }
+
+    .social-login-buttons,
+    .email-login-form {
+        width: 100%; 
+        max-width: none; 
+    }
+}

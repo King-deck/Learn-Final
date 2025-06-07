@@ -1,34 +1,48 @@
 body {
-  background-color: #0A0A0A;
-  color: #FFFFFF;
-  font-family: sans-serif;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+    background-color: #0A0A0A;
+    color: #FFFFFF;
+    font-family: sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .hero-recruitment-container {
-  background-color: #0A0A0A;
-  padding: 40px;
-  border-radius: 0px;
-  text-align: left; /* Alineación general a la izquierda */
-  max-width: 80%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+    background-color: #0A0A0A;
+    padding: 40px;
+    border-radius: 0px;
+    text-align: left;
+    max-width: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Sección de introducción */
 .hero-intro {
-  margin-bottom: 40px; /* Espacio antes del cuestionario */
+    /* Estado base para la transición */
+    opacity: 0;
+    visibility: hidden;
+    display: none; /* Inicialmente oculto por CSS */
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out; /* Transición para aparecer/desaparecer */
+
+    margin-bottom: 40px; /* Mantener tus estilos originales */
 }
+
+/* Clase activa para mostrar la introducción (la usará JS) */
+.hero-intro.active {
+    opacity: 1; /* Se vuelve visible cuando tiene la clase active */
+    visibility: visible;
+    display: block; /* Asegura que se muestre como bloque */
+}
+
 
 .hero-intro h1 {
     font-weight: 800;
     font-size: 2.2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
     line-height: 1.2;
     text-transform: uppercase;
     margin-left: 0px;
@@ -37,192 +51,315 @@ body {
 }
 
 .hero-intro p.hero-description {
-  color:  #CCCCCC; 
-  font-size: 20px; /* Un poco más grande */
-  line-height: 1.6;
-  margin-bottom: 30px;
-  text-align: left; /* Alineación a la izquierda para la descripción */
+    color: #CCCCCC;
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    text-align: left;
 }
 
 .hero-intro .hero-action-button {
-  background-color: #F89C1C ;
-  color: #FFFFFF;
-  border: none;
-  border-radius: 8px;
-  padding: 15px 30px;
-  font-size: 19px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease, opacity 0.5s ease;
-   margin-left: -30px
+    background-color: #F89C1C;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    padding: 15px 30px;
+    font-size: 19px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: -3px;
+    box-shadow: none;
 }
 
 .hero-intro .hero-action-button:hover {
-  background-color: #F89C1C ;
+    background-color: #E08A1A; /* Color de hover para el botón de inicio */
 }
 
 /* Contenedor de la imagen */
 .hero-image-container {
-  text-align: center; /* Centrar la imagen horizontalmente */
-  margin-bottom: 40px; /* Espacio entre la imagen y el cuestionario */
-  margin-right: 20%; /* Ajuste para mover la imagen a la izquierda */
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Estilos para la imagen */
+/* Estilos para la imagen principal (la de fondo, sin el texto "Evolves") */
 .hero-image-container img {
-  height: auto; /* Mantener la proporción de la imagen */
-  display: block; /* Evitar espacio extra debajo de la imagen */
-  margin: 0 auto; /* Centrar la imagen si no ocupa todo el ancho */
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Opcional: una sombra suave */
-  border-radius: 1%;
-  object-fit: cover;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 1%;
+    object-fit: cover;
+    margin-bottom: 3rem;
+    width: 100%;
+}
+
+/* Nuevos estilos para el texto PNG de "Evolves" */
+.evolves-text-overlay {
+    position: absolute;
+    top: 39%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 2;
+    max-width: 30%;
+    height: auto;
+    pointer-events: auto;
+    transition: all 0.3s ease-in-out;
+    filter: brightness(10%);
+    box-shadow: none;
+}
+
+/* Efecto al pasar el ratón (hover) sobre el CONTENEDOR DE LA IMAGEN */
+.evolves-text-overlay:hover {
+    transform: translate(-50%, -50%) scale(1.2);
+    filter: brightness(150%);
+    box-shadow: none;
 }
 
 /* Contenedor del cuestionario */
 .hero-quiz-container {
-  width: 100%;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out; /* Transición más rápida */
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1; /* Para que el cuestionario ocupe el espacio restante */
+    opacity: 0; /* Por defecto invisible. JS lo hará 1. */
+    visibility: hidden; /* Añadido para consistencia */
+    display: none; /* Oculto por defecto. JS lo hará flex. */
+    width: 100%;
+    flex-direction: column;
+    flex-grow: 1;
+    min-height: 50vh;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out; /* Transición para aparecer/desaparecer */
+    position: relative; 
 }
 
+/* Clase activa para mostrar el quiz (la usará JS) */
 .hero-quiz-container.active {
-  opacity: 1;
+    opacity: 1; /* Se vuelve visible cuando tiene la clase active */
+    visibility: visible; /* Añadido para consistencia */
+    display: flex; /* Asegura que se muestre como flex */
 }
+
 
 /* Barra de progreso - Estilos generales */
 .hero-progress-bar-container {
-  background-color: #222;
-  height: 8px;
-  width: 100%;
-  border-radius: 4px;
-  overflow: hidden;
-  position: fixed; /* Fijamos la posición */
-  bottom: 0;       /* La pegamos a la parte inferior */
-  left: 0;         /* La alineamos a la izquierda */
-  z-index: 10;      /* Aseguramos que esté por encima de otros elementos */
+    background-color: #222;
+    height: 8px;
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    opacity: 0; /* Por defecto invisible. JS lo hará 1. */
+    visibility: hidden; /* Añadido para consistencia */
+    pointer-events: none; /* Deshabilita clics cuando está invisible */
+    display: none; /* Oculto por defecto. JS lo hará block/flex. */
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out; /* Transición para aparecer/desaparecer */
 }
+
+/* Clase activa para mostrar la barra de progreso */
+.hero-progress-bar-container.active {
+    opacity: 1;
+    visibility: visible;
+    display: block;
+}
+
 
 /* Barra de progreso - Ubicación abajo */
 .hero-progress-bar-container.bottom {
-  margin-top: 0; /* Ya no necesitamos el margin-top automático */
-  margin-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .hero-progress-bar {
-  background-color: #00FF88;
-  height: 100%;
-  width: 0%;
-  border-radius: 4px;
-  transition: width 0.2s ease-in-out; /* Transición más rápida */
+    background-color: #00FF88;
+    height: 100%;
+    width: 0%;
+    border-radius: 4px;
+    transition: width 0.3s ease-in-out; /* Transición para el avance de la barra */
 }
 
 /* Contenedor de preguntas */
 .hero-question-container {
-  display: none; /* Ocultas por defecto */
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 30px;
-  width: 100%;
-  margin-bottom: 60px;
-  opacity: 1; /* Inicialmente completamente visible */
-  filter: blur(0px); /* Inicialmente sin desenfoque */
-  transition: opacity 0.3s ease-in-out, filter 0.3s ease-in-out; /* Transición de opacidad y filtro */
+    display: none; /* Oculta por defecto, JS lo hará flex cuando sea activo */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    width: 100%;
+    margin-bottom: 60px;
+    opacity: 0; /* Oculto por defecto, JS lo hará 1. */
+    visibility: hidden; /* Asegura que el contenido no sea interactuable */
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out; /* ¡Esta es la clave para el desvanecimiento de preguntas! */
 }
 
 .hero-question-container.active {
-  display: flex;
-  opacity: 1;
-  filter: blur(0px); /* Sin desenfoque para la pregunta activa */
-  transform: translateY(0); /* Asegúrate de que no haya desplazamiento vertical aquí */
-}
-
-.hero-question-container.fade-out {
-  opacity: 0;
-  filter: blur(5px); /* Desenfoque al desvanecerse */
-}
-
-.hero-question-container.fade-in {
-  opacity: 1;
-  filter: blur(0px); /* Sin desenfoque al aparecer */
+    display: flex; /* Se muestra con flexbox cuando está activo */
+    opacity: 1; /* Se vuelve completamente visible */
+    visibility: visible; /* Se hace visible */
 }
 
 /* Texto de la pregunta */
 .hero-question-text {
-  color: #FFFFFF;
-  font-size: 28px; /* Un poco más grande */
-  font-weight: bold;
-  line-height: 1.3;
-  text-align: left; /* Alineación a la izquierda para el texto de la pregunta */
+    color: #FFFFFF;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1.3;
+    text-align: left;
 }
 
 /* Opciones de respuesta */
 .hero-options {
-  display: flex;
-  gap: 20px;
+    display: flex;
+    gap: 20px;
 }
 
 .hero-option-button {
-  background-color: #333;
-  color: #FFFFFF;
-  border: none;
-  border-radius: 8px;
-  padding: 15px 30px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease; /* Cambio de color en hover */
+    background-color: #333;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    padding: 15px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .hero-option-button:hover {
-  background-color:  #F89C1C ; /* Cambio de color al pasar el ratón */
-  border: none; /* Eliminar el contorno */
+    background-color: #F89C1C;
+    border: none;
 }
 
-/* Mensaje final */
-.hero-final-message {
-  display: none;
-  flex-direction: column;
-  align-items: flex-start; /* Alineación a la izquierda para el mensaje final */
-  gap: 30px;
-}
-
-.hero-final-message h2 {
-  color: #00FF88;
-  font-size: 36px;
-  font-weight: bold;
-  line-height: 1.2;
-}
-
-.hero-final-message p {
-  color: #EEEEEE;
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-.hero-final-message .hero-action-button {
-  background-color: #00FF88;
-  color: #0A0A0A;
-  border: none;
-  border-radius: 8px;
-  padding: 15px 30px;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.hero-final-message .hero-action-button:hover {
-  background-color: #00CC66;
-}
 /* Blockquote */
 .hero-quote {
-  color: #ffffff; /* Establece el color del texto a blanco */
-  padding-left: 40px; /* Añade un espacio a la izquierda para la barra */
-  border-left: 2px solid #F89C1C ; /* Crea una barra blanca de 5px de ancho */
-  margin-left: 0; /* Asegúrate de que no haya márgenes que interfieran */
-  font-size: 1.9rem;
-  font-family: sans-serif;
-  font-weight: 700;
+    color: #ffffff;
+    padding-left: 40px;
+    border-left: 2px solid #F89C1C;
+    margin-left: 0;
+    font-size: 1.9rem;
+    font-family: sans-serif;
+    font-weight: 700;
+}
+
+/* Estilos para los mensajes finales */
+.hero-final-message {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 30px;
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    color: #FFFFFF;
+
+    opacity: 0; 
+    visibility: hidden; 
+    display: none; 
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out; /* Transición para aparecer/desaparecer */
+    
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    z-index: 5; 
+}
+
+/* Clase para mostrar los mensajes finales (la usará JS) */
+.hero-final-message.active {
+    opacity: 1; 
+    visibility: visible; 
+    display: flex; 
+}
+
+/* Estilos específicos para el mensaje "Digno" (Éxito) */
+#final-digno {
+    background-color: rgba(0, 255, 136, 0.85);
+    border: 2px solid #00FF88;
+}
+
+#final-digno h2 {
+    color: #0A0A0A;
+    font-weight: 800;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin-left: 0px;
+    margin-top: 30px;
+}
+
+#final-digno p {
+    color: #0A0A0A;
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* Estilos específicos para el botón dentro del mensaje "Digno" */
+#final-digno .hero-action-button {
+    background-color: #F89C1C;
+    color: #FFFFFF;
+    font-size: 20px;
+    padding: 18px 40px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: none;
+    outline: none;
+    border: none;
+}
+
+#final-digno .hero-action-button:hover {
+    background-color: #E08A1A;
+    transform: scale(1.05); 
+    outline: none;
+}
+
+/* Estilos específicos para el mensaje "No Digno" (Reintentar) */
+#final-no-digno {
+    background-color: rgba(248, 156, 28, 0.85);
+    border: 2px solid #F89C1C;
+}
+
+#final-no-digno h2 {
+    color: #0A0A0A;
+    font-weight: 800;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin-left: 0px;
+    margin-top: 30px;
+}
+
+#final-no-digno p {
+    color: #0A0A0A;
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* Estilos específicos para el botón dentro del mensaje "No Digno" */
+#final-no-digno .hero-action-button {
+    background-color: #F89C1C;
+    color: #FFFFFF;
+    font-size: 20px;
+    padding: 18px 40px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: none;
+    outline: none;
+    border: none;
+}
+
+#final-no-digno .hero-action-button:hover {
+    background-color: #E08A1A;
+    transform: scale(1.05); 
+    outline: none;
 }
